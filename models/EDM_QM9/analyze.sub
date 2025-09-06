@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -J EDM
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=3700
+#SBATCH --gres=gpu:quadro_rtx_6000:1
+#SBATCH --time=48:00:00
+module purge
+module load CUDA/11.8.0 GCCcore/10.2.0  Python/3.8.6
+conda init 
+conda activate EDM-env 
+python /home/chem/msummc/EDM/e3_diffusion_for_molecules/eval_analyze.py --model_path /home/chem/msummc/EDM/e3_diffusion_for_molecules/outputs/edm_qm9 --n_samples 20_000 --save_to_xyz True 
+python /home/chem/msummc/EDM/e3_diffusion_for_molecules/eval_sample.py --model_path /home/chem/msummc/EDM/e3_diffusion_for_molecules/outputs/edm_qm9 --n_samples 10 

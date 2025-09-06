@@ -1,0 +1,17 @@
+[2024-11-06 00:03:10,950][schnetpack.cli][INFO] - Running on host: gpu001.avon.hpc
+[2024-11-06 00:03:11,016][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-06 00:03:11,122][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-06 00:03:11,435][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-06 00:03:11,455][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-06 00:03:11,472][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-06 00:03:11,473][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-06 00:03:11,474][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-06 00:03:11,474][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-06 00:03:11,475][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-06 00:03:11,475][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-06 00:03:11,480][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-06 00:03:11,508][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-06 00:03:12,417][schnetpack.cli][INFO] - Starting training.
+[2024-11-06 00:03:12,459][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.2 and a maximum neighbor distance (i.e. placement cutoff) of 1.8.
+[2024-11-06 00:03:12,663][root][INFO] - Using precomputed results stored in the metadata of the database. If you want to force the re-computation of disconnected structures, set force_preprocessing=True.
+[2024-11-06 00:03:12,674][root][INFO] - Done! Found 16462 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 1.8) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.2).

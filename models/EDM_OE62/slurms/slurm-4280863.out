@@ -1,0 +1,4 @@
+/var/spool/slurmd/job4280863/slurm_script: line 11: module: command not found
+/var/spool/slurmd/job4280863/slurm_script: line 12: module: command not found
+/var/spool/slurmd/job4280863/slurm_script: line 13: module: command not found
+slurmstepd: error: *** JOB 4280863 ON gpu112 CANCELLED AT 2025-05-04T14:36:17 DUE TO TIME LIMIT ***

@@ -1,0 +1,102 @@
+/var/spool/slurmd/job3179763/slurm_script: line 11: module: command not found
+/var/spool/slurmd/job3179763/slurm_script: line 12: module: command not found
+/var/spool/slurmd/job3179763/slurm_script: line 13: module: command not found
+/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:43: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  result = getattr(asarray(obj), method)(*args, **kwds)
+wandb: Currently logged in as: abdullahalfekaiki (abdullahalfekaiki-university-of-warwick) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.6
+wandb: Run data is saved locally in /users/afekaiki/EDM/wandb/run-20250223_202633-y13yfqsv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run edm_oe62
+wandb: ⭐️ View project at https://wandb.ai/abdullahalfekaiki-university-of-warwick/EDM_oe62
+wandb: 🚀 View run at https://wandb.ai/abdullahalfekaiki-university-of-warwick/EDM_oe62/runs/y13yfqsv
+Namespace(aggregation_method='sum', attention=True, augment_noise=0, batch_size=64, break_train_epoch=False, clip_grad=True, condition_time=True, conditioning=[], cuda=True, data_augmentation=False, dataset='oe62', dequantization='argmax_variational', diffusion_loss_type='l2', diffusion_noise_precision=1e-05, diffusion_noise_schedule='polynomial_2', diffusion_steps=1000, dp=True, ema_decay=0.9999, exp_name='edm_oe62', filter_molecule_size=None, filter_n_atoms=None, generate_epochs=1, include_charges=False, inv_sublayers=1, lr=0.0001, model='egnn_dynamics', n_epochs=3000, n_layers=4, n_report_steps=50, n_stability_samples=500, nf=256, no_cuda=False, no_wandb=False, norm_constant=1, normalization_factor=1.0, normalize_factors=[1, 4, 10], num_workers=0, ode_regularization=0.001, online=True, probabilistic_model='diffusion', remove_h=False, resume=None, save_model=True, sequential=False, sin_embedding=False, start_epoch=0, tanh=True, test_epochs=15, trace='hutch', visualize_every_batch=10000, wandb_usr=None)
+Entropy of n_nodes: H[N] -4.140960693359375
+alphas2 [9.99990000e-01 9.99988000e-01 9.99982000e-01 ... 2.59676966e-05
+ 1.39959211e-05 1.00039959e-05]
+gamma [-11.51291546 -11.33059532 -10.92513058 ...  10.55863126  11.17673063
+  11.51251595]
+Training using 3 GPUs
+Epoch: 0, iter: 0/769, Loss 5.26, NLL: 5.26, RegTerm: 0.0, GradNorm: 1145.0
+Clipped gradient with value 159737.7 while allowed 5647.2
+Clipped gradient with value 1726923.0 while allowed 7398.3
+Clipped gradient with value 223665.7 while allowed 9428.6
+Clipped gradient with value 97769.0 while allowed 11754.8
+Clipped gradient with value 457447.5 while allowed 13321.5
+Clipped gradient with value 895367.2 while allowed 13858.1
+Clipped gradient with value 59579.1 while allowed 14945.6
+Clipped gradient with value 13433.7 while allowed 12985.6
+Clipped gradient with value 213102.7 while allowed 13537.8
+Epoch: 0, iter: 50/769, Loss 4.28, NLL: 4.28, RegTerm: 0.0, GradNorm: 42.1
+Clipped gradient with value 14550.0 while allowed 12593.3
+Clipped gradient with value 18539.9 while allowed 11522.2
+Clipped gradient with value 262750.6 while allowed 10162.4
+Clipped gradient with value 16449.8 while allowed 9304.9
+Clipped gradient with value 1606426.4 while allowed 8784.1
+Clipped gradient with value 38363.9 while allowed 8013.8
+Epoch: 0, iter: 100/769, Loss 4.28, NLL: 4.28, RegTerm: 0.0, GradNorm: 33.4
+Clipped gradient with value 634693.2 while allowed 7305.4
+Clipped gradient with value 11525.4 while allowed 7775.8
+Epoch: 0, iter: 150/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 5.8
+Clipped gradient with value 74814.3 while allowed 1897.6
+Clipped gradient with value 1766.2 while allowed 1161.2
+Epoch: 0, iter: 200/769, Loss 4.41, NLL: 4.41, RegTerm: 0.0, GradNorm: 24.6
+Epoch: 0, iter: 250/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 10.8
+Clipped gradient with value 1364.9 while allowed 50.7
+Epoch: 0, iter: 300/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 2.6
+Clipped gradient with value 441.4 while allowed 38.6
+Epoch: 0, iter: 350/769, Loss 4.26, NLL: 4.26, RegTerm: 0.0, GradNorm: 1.7
+Clipped gradient with value 10.7 while allowed 10.6
+Clipped gradient with value 8.7 while allowed 8.3
+Clipped gradient with value 214.0 while allowed 8.7
+Clipped gradient with value 16.0 while allowed 9.1
+Epoch: 0, iter: 400/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 16.0
+Clipped gradient with value 22.6 while allowed 7.2
+Epoch: 0, iter: 450/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 2.1
+Clipped gradient with value 25.1 while allowed 5.5
+Clipped gradient with value 6.0 while allowed 5.6
+Clipped gradient with value 838.0 while allowed 6.0
+Clipped gradient with value 7.3 while allowed 6.2
+Clipped gradient with value 25.6 while allowed 6.6
+Clipped gradient with value 8.8 while allowed 6.7
+Clipped gradient with value 1663.2 while allowed 7.0
+Epoch: 0, iter: 500/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 1.5
+Clipped gradient with value 18.6 while allowed 7.3
+Clipped gradient with value 95483.5 while allowed 7.7
+Epoch: 0, iter: 550/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 5.6
+Clipped gradient with value 11.5 while allowed 8.3
+Clipped gradient with value 8.2 while allowed 7.0
+Epoch: 0, iter: 600/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 1.1
+Clipped gradient with value 7.6 while allowed 6.4
+Clipped gradient with value 36.5 while allowed 8.3
+Clipped gradient with value 12.2 while allowed 8.7
+Clipped gradient with value 43.9 while allowed 9.8
+Epoch: 0, iter: 650/769, Loss 4.43, NLL: 4.43, RegTerm: 0.0, GradNorm: 6.0
+Clipped gradient with value 16.8 while allowed 11.2
+Clipped gradient with value 29.9 while allowed 12.0
+Epoch: 0, iter: 700/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 6.5
+Clipped gradient with value 172.1 while allowed 11.4
+Clipped gradient with value 34.9 while allowed 12.0
+Clipped gradient with value 17.6 while allowed 11.7
+Clipped gradient with value 409.8 while allowed 11.1
+Epoch: 0, iter: 750/769, Loss 4.33, NLL: 4.33, RegTerm: 0.0, GradNorm: 2.5
+Clipped gradient with value 228.9 while allowed 12.2
+Epoch took 194.5 seconds.
+{'log_SNR_max': 11.51291561126709, 'log_SNR_min': -11.512516021728516}
+Analyzing molecule stability at epoch 0...
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33medm_oe62[0m at: [34mhttps://wandb.ai/abdullahalfekaiki-university-of-warwick/EDM_oe62/runs/y13yfqsv[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250223_202633-y13yfqsv/logs[0m
+Traceback (most recent call last):
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py", line 280, in <module>
+    main()
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py", line 246, in main
+    train_test.analyze_and_save(epoch, model_ema, nodes_dist, args, device,
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/train_test.py", line 192, in analyze_and_save
+    validity_dict, rdkit_tuple = analyze_stability_for_molecules(molecules, dataset_info)
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/qm9/analyze.py", line 351, in analyze_stability_for_molecules
+    validity_results = check_stability(pos, atom_type, dataset_info)
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/qm9/analyze.py", line 235, in check_stability
+    possible_bonds = bond_analyze.allowed_bonds[atom_decoder[atom_type_i]]
+KeyError: 'Te'

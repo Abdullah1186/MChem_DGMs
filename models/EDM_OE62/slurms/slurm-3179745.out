@@ -1,0 +1,23 @@
+/var/spool/slurmd/job3179745/slurm_script: line 11: module: command not found
+/var/spool/slurmd/job3179745/slurm_script: line 12: module: command not found
+/var/spool/slurmd/job3179745/slurm_script: line 13: module: command not found
+Warning, currently taking a random permutation for train/val/test partitions, this needs to be fixed forreproducibility.
+Traceback (most recent call last):
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py", line 129, in <module>
+    split_data = build_oe62_dataset.load_split_data(data_file, val_proportion=0.1, test_proportion=0.1, filter_size=args.filter_molecule_size)
+  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/build_oe62_dataset.py", line 106, in load_split_data
+    val_data, test_data, train_data = np.split(data_list, [val_index, test_index])
+  File "<__array_function__ internals>", line 200, in split
+  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/lib/shape_base.py", line 874, in split
+    return array_split(ary, indices_or_sections, axis)
+  File "<__array_function__ internals>", line 200, in array_split
+  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/lib/shape_base.py", line 786, in array_split
+    sary = _nx.swapaxes(ary, axis, 0)
+  File "<__array_function__ internals>", line 200, in swapaxes
+  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 594, in swapaxes
+    return _wrapfunc(a, 'swapaxes', axis1, axis2)
+  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 54, in _wrapfunc
+    return _wrapit(obj, method, *args, **kwds)
+  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 43, in _wrapit
+    result = getattr(asarray(obj), method)(*args, **kwds)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (61489,) + inhomogeneous part.

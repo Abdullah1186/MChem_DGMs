@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -J gschnet
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=3700
+#SBATCH --gres=gpu:quadro_rtx_6000:1
+#SBATCH --time=48:00:00
+module purge
+module load CUDA/11.8.0 GCCcore/13.2.0  Python/3.11.5
+source ~/gschnet-env/bin/activate
+HYDRA_FULL_ERROR=1 python /home/chem/msummc/gschnet/schnetpack-gschnet/src/scripts/generate.py --config-dir=/home/chem/msummc/gschnet/gschnet-configs  --config-name generate_molecules  'modeldir="/home/chem/msummc/2192510_training_and_generation/drugs_subs/models/custom_data/drugs_run_30"' 'generate.n_molecules=20000' '++generate.max_n_atoms=181'> gen.out

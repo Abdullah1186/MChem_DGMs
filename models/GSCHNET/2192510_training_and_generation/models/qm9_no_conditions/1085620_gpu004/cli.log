@@ -1,0 +1,36 @@
+[2024-10-17 21:42:58,902][schnetpack.cli][INFO] - Running on host: gpu004.avon.hpc
+[2024-10-17 21:42:58,977][schnetpack.cli][INFO] - Seed randomly...
+[2024-10-17 21:42:59,076][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.datasets.QM9Gen>
+[2024-10-17 21:42:59,232][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-10-17 21:42:59,251][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-10-17 21:42:59,268][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-10-17 21:42:59,269][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-10-17 21:42:59,270][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-10-17 21:42:59,270][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-10-17 21:42:59,271][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-10-17 21:42:59,271][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-10-17 21:42:59,273][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-10-17 21:42:59,308][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-10-17 21:43:00,013][schnetpack.cli][INFO] - Starting training.
+[2024-10-17 21:43:00,052][root][INFO] - Downloading GDB-9 atom references...
+[2024-10-17 21:43:00,290][root][INFO] - Done.
+[2024-10-17 21:43:00,383][root][INFO] - Downloading list of uncharacterized molecules...
+[2024-10-17 21:43:00,654][root][INFO] - Done.
+[2024-10-17 21:43:00,656][root][INFO] - Downloading GDB-9 data to temporary directory /tmp/tmptbkdhfoqqm9...
+[2024-10-17 21:43:02,375][root][INFO] - Done.
+[2024-10-17 21:43:02,375][root][INFO] - Extracting files...
+[2024-10-17 21:43:23,978][root][INFO] - Done.
+[2024-10-17 21:43:23,982][root][INFO] - Parse xyz files...
+[2024-10-17 21:45:40,708][root][INFO] - Write atoms to db at /gpfs/home/chem/msummc/2192510_training_and_generation/data/qm9.db...
+[2024-10-17 21:48:07,283][root][INFO] - Done.
+[2024-10-17 21:48:10,231][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.1 and a maximum neighbor distance (i.e. placement cutoff) of 1.7.
+[2024-10-17 21:48:44,956][root][INFO] - Done! Found 13 disconnected structures among the 130831 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 1.7) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.1).
+[2024-10-19 01:29:15,227][schnetpack.cli][INFO] - Starting testing.
+[2024-10-19 01:29:15,254][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-10-19 01:38:26,893][schnetpack.cli][INFO] - Best checkpoint path:
+/gpfs/home/chem/msummc/2192510_training_and_generation/models/qm9_no_conditions/1085620_gpu004/checkpoints/epoch=285.ckpt
+[2024-10-19 01:38:26,893][schnetpack.cli][INFO] - Store best model
+[2024-10-19 01:38:28,177][schnetpack.cli][INFO] - Best model stored at /gpfs/home/chem/msummc/2192510_training_and_generation/models/qm9_no_conditions/1085620_gpu004/best_model
+[2024-10-22 14:53:56,536][schnetpack_gschnet.cli][INFO] - Running on host: gpu003.avon.hpc
+[2024-10-22 14:53:57,014][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-10-22 15:19:37,097][schnetpack_gschnet.cli][INFO] - Finished generation. Wrote 19900 successfully generated molecules to the data base at /gpfs/home/chem/msummc/2192510_training_and_generation/models/qm9_no_conditions/1085620_gpu004/generated_molecules/1.db!

@@ -1,0 +1,16 @@
+[2024-11-06 00:21:25,604][schnetpack.cli][INFO] - Running on host: gpu013.avon.hpc
+[2024-11-06 00:21:25,663][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-06 00:21:25,835][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-06 00:21:25,993][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-06 00:21:26,013][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-06 00:21:26,030][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-06 00:21:26,032][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-06 00:21:26,032][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-06 00:21:26,033][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-06 00:21:26,033][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-06 00:21:26,033][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-06 00:21:26,035][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-06 00:21:26,072][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-06 00:21:26,680][schnetpack.cli][INFO] - Starting training.
+[2024-11-06 00:21:26,718][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.4 and a maximum neighbor distance (i.e. placement cutoff) of 2.0.
+[2024-11-06 00:22:18,718][root][INFO] - Done! Found 2730 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 2.0) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.4).

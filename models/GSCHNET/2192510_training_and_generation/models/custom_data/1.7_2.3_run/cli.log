@@ -1,0 +1,106 @@
+[2024-11-06 16:30:57,381][schnetpack.cli][INFO] - Running on host: gpu007.avon.hpc
+[2024-11-06 16:30:57,419][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-06 16:30:57,422][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-06 16:30:57,517][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-06 16:30:57,538][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-06 16:30:57,555][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-06 16:30:57,556][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-06 16:30:57,557][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-06 16:30:57,557][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-06 16:30:57,557][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-06 16:30:57,558][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-06 16:30:57,559][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-06 16:30:57,586][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-06 16:30:58,052][schnetpack.cli][INFO] - Starting training.
+[2024-11-06 16:30:58,094][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.7 and a maximum neighbor distance (i.e. placement cutoff) of 2.3.
+[2024-11-06 16:32:00,232][root][INFO] - Done! Found 303 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 2.3) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.7).
+[2024-11-06 16:43:35,717][schnetpack.cli][INFO] - Starting testing.
+[2024-11-06 16:43:35,752][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-11-06 16:46:19,572][schnetpack.cli][INFO] - Best checkpoint path:
+/gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/checkpoints/epoch=00.ckpt
+[2024-11-06 16:46:19,572][schnetpack.cli][INFO] - Store best model
+[2024-11-06 16:46:20,077][schnetpack.cli][INFO] - Best model stored at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/best_model
+[2024-11-07 13:25:29,776][schnetpack.cli][INFO] - Running on host: gpu001.avon.hpc
+[2024-11-07 13:25:29,777][schnetpack.cli][INFO] - Config already exists in given directory /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run. Attempting to continue training.
+[2024-11-07 13:25:29,830][schnetpack.cli][INFO] - Resuming from checkpoint /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/checkpoints/last.ckpt
+[2024-11-07 13:25:29,899][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-07 13:25:30,119][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-07 13:25:30,772][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-07 13:25:30,794][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-07 13:25:30,811][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-07 13:25:30,812][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-07 13:25:30,813][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-07 13:25:30,813][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-07 13:25:30,814][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-07 13:25:30,814][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-07 13:25:30,817][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-07 13:25:30,850][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-07 13:25:33,139][schnetpack.cli][INFO] - Starting training.
+[2024-11-07 13:25:33,203][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.7 and a maximum neighbor distance (i.e. placement cutoff) of 2.3.
+[2024-11-07 13:25:34,211][root][INFO] - Using precomputed results stored in the metadata of the database. If you want to force the re-computation of disconnected structures, set force_preprocessing=True.
+[2024-11-07 13:25:34,223][root][INFO] - Done! Found 303 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 2.3) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.7).
+[2024-11-07 13:25:34,235][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-11-10 11:11:15,934][schnetpack.cli][INFO] - Running on host: gpu002.avon.hpc
+[2024-11-10 11:11:15,960][schnetpack.cli][INFO] - Config already exists in given directory /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run. Attempting to continue training.
+[2024-11-10 11:11:16,001][schnetpack.cli][INFO] - Resuming from checkpoint /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/checkpoints/last.ckpt
+[2024-11-10 11:11:16,059][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-10 11:11:16,175][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-10 11:11:16,362][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-10 11:11:16,383][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-10 11:11:16,449][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-10 11:11:16,450][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-10 11:11:16,451][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-10 11:11:16,451][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-10 11:11:16,451][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-10 11:11:16,452][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-10 11:11:16,453][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-10 11:11:16,479][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-10 11:11:17,192][schnetpack.cli][INFO] - Starting training.
+[2024-11-10 11:11:17,220][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.7 and a maximum neighbor distance (i.e. placement cutoff) of 2.3.
+[2024-11-10 11:11:17,662][root][INFO] - Using precomputed results stored in the metadata of the database. If you want to force the re-computation of disconnected structures, set force_preprocessing=True.
+[2024-11-10 11:11:17,674][root][INFO] - Done! Found 303 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 2.3) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.7).
+[2024-11-10 11:11:17,685][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-11-10 11:14:50,158][schnetpack.cli][INFO] - Running on host: gpu002.avon.hpc
+[2024-11-10 11:14:50,159][schnetpack.cli][INFO] - Config already exists in given directory /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run. Attempting to continue training.
+[2024-11-10 11:14:50,196][schnetpack.cli][INFO] - Resuming from checkpoint /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/checkpoints/last.ckpt
+[2024-11-10 11:14:50,224][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-10 11:14:50,228][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-10 11:14:50,256][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-10 11:14:50,276][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-10 11:14:50,377][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-10 11:14:50,378][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-10 11:14:50,378][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-10 11:14:50,379][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-10 11:14:50,379][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-10 11:14:50,379][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-10 11:14:50,381][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-10 11:14:50,405][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-10 11:14:50,511][schnetpack.cli][INFO] - Starting training.
+[2024-11-10 11:14:50,538][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.7 and a maximum neighbor distance (i.e. placement cutoff) of 2.3.
+[2024-11-10 11:14:50,578][root][INFO] - Using precomputed results stored in the metadata of the database. If you want to force the re-computation of disconnected structures, set force_preprocessing=True.
+[2024-11-10 11:14:50,590][root][INFO] - Done! Found 303 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 2.3) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.7).
+[2024-11-10 11:14:50,601][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-11-12 02:54:03,213][schnetpack.cli][INFO] - Starting testing.
+[2024-11-12 02:54:03,248][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-11-12 02:56:39,069][schnetpack.cli][INFO] - Best checkpoint path:
+/gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/checkpoints/epoch=441.ckpt
+[2024-11-12 02:56:39,069][schnetpack.cli][INFO] - Store best model
+[2024-11-12 02:56:40,338][schnetpack.cli][INFO] - Best model stored at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/best_model
+[2024-11-12 11:32:11,451][schnetpack_gschnet.cli][INFO] - Running on host: gpu011.avon.hpc
+[2024-11-12 11:32:11,824][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-11-12 12:20:37,170][schnetpack_gschnet.cli][INFO] - Finished generation. Wrote 2368 successfully generated molecules to the data base at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/generated_molecules/1.db!
+[2024-11-20 14:53:15,105][schnetpack_gschnet.cli][INFO] - Running on host: gpu001.avon.hpc
+[2024-11-20 14:53:15,553][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-11-20 15:40:26,183][schnetpack_gschnet.cli][INFO] - Finished generation. Wrote 2324 successfully generated molecules to the data base at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/generated_molecules/1.db!
+[2024-11-22 15:43:08,906][schnetpack_gschnet.cli][INFO] - Running on host: gpu004.avon.hpc
+[2024-11-22 15:43:09,462][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-11-22 15:44:50,338][schnetpack_gschnet.cli][INFO] - Running on host: gpu004.avon.hpc
+[2024-11-22 15:44:50,576][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-11-22 15:51:18,089][schnetpack_gschnet.cli][INFO] - Running on host: gpu001.avon.hpc
+[2024-11-22 15:51:18,596][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-11-26 01:11:33,703][schnetpack_gschnet.cli][INFO] - Running on host: gpu015.avon.hpc
+[2024-11-26 01:11:34,221][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2024-11-26 03:01:57,309][schnetpack_gschnet.cli][INFO] - Finished generation. Wrote 5772 successfully generated molecules to the data base at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/generated_molecules/4.db!
+[2025-05-05 18:36:06,319][schnetpack_gschnet.cli][INFO] - Running on host: gpu014.avon.hpc
+[2025-05-05 18:36:06,672][schnetpack_gschnet.cli][INFO] - Generating 80000 molecules in 8000 batches! Running on device "cuda".
+[2025-05-06 14:15:59,603][schnetpack_gschnet.cli][INFO] - Finished generation. Wrote 35728 successfully generated molecules to the data base at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.7_2.3_run/generated_molecules/5.db!

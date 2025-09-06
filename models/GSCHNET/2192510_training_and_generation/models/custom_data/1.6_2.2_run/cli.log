@@ -1,0 +1,22 @@
+[2024-11-06 16:15:20,043][schnetpack.cli][INFO] - Running on host: gpu007.avon.hpc
+[2024-11-06 16:15:20,120][schnetpack.cli][INFO] - Seed randomly...
+[2024-11-06 16:15:20,240][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack_gschnet.data.GenerativeAtomsDataModule>
+[2024-11-06 16:15:20,472][schnetpack.cli][INFO] - Instantiating model <schnetpack_gschnet.ConditionalGenerativeSchNet>
+[2024-11-06 16:15:20,494][schnetpack.cli][INFO] - Instantiating task <schnetpack_gschnet.ConditionalGenerativeSchNetTask>
+[2024-11-06 16:15:20,555][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2024-11-06 16:15:20,557][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-11-06 16:15:20,558][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2024-11-06 16:15:20,558][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.TQDMProgressBar>
+[2024-11-06 16:15:20,558][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.ModelSummary>
+[2024-11-06 16:15:20,559][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2024-11-06 16:15:20,560][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-11-06 16:15:20,590][schnetpack.cli][INFO] - Logging hyperparameters.
+[2024-11-06 16:15:21,435][schnetpack.cli][INFO] - Starting training.
+[2024-11-06 16:15:21,476][root][INFO] - Setting up training data - checking connectivity of molecules using covalent radii from ASE with a factor of 1.6 and a maximum neighbor distance (i.e. placement cutoff) of 2.2.
+[2024-11-06 16:16:20,405][root][INFO] - Done! Found 576 disconnected structures among the 61489 molecules in the database. These structures will not be included in the training, validation, or test set. If you want to decrease this number, it might help to increase `placement_cutoff` (currently 2.2) and (if `use_covalent_radii` is set) `covalent_radius_factor` (currently 1.6).
+[2024-11-06 16:27:50,690][schnetpack.cli][INFO] - Starting testing.
+[2024-11-06 16:27:50,725][root][INFO] - Loading splits for training, validation and testing from existing split file at split.npz.
+[2024-11-06 16:30:27,149][schnetpack.cli][INFO] - Best checkpoint path:
+/gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.6_2.2_run/checkpoints/epoch=00.ckpt
+[2024-11-06 16:30:27,149][schnetpack.cli][INFO] - Store best model
+[2024-11-06 16:30:27,705][schnetpack.cli][INFO] - Best model stored at /gpfs/home/chem/msummc/2192510_training_and_generation/models/custom_data/1.6_2.2_run/best_model

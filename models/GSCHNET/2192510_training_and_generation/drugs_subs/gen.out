@@ -1,0 +1,15 @@
+[2025-04-17 14:09:13,937][schnetpack_gschnet.cli][INFO] - Running on host: gpu006.avon.hpc
+⚙ Running with the following config:
+├── modeldir
+│   └── /home/chem/msummc/2192510_training_and_generation/drugs_subs/models/cust
+└── generate
+    └── n_molecules: 20000                                                      
+        batch_size: 10                                                          
+        max_n_atoms: 181                                                        
+        grid_distance_min: 0.7                                                  
+        grid_spacing: 0.05                                                      
+        temperature_term: 0.1                                                   
+        grid_batch_size: 0                                                      
+                                                                                
+[2025-04-17 14:09:26,975][schnetpack_gschnet.cli][INFO] - Generating 20000 molecules in 2000 batches! Running on device "cuda".
+[2025-04-17 21:10:43,949][schnetpack_gschnet.cli][INFO] - Finished generation. Wrote 4625 successfully generated molecules to the data base at /gpfs/home/chem/msummc/2192510_training_and_generation/drugs_subs/models/custom_data/drugs_run_30/generated_molecules/5.db!
