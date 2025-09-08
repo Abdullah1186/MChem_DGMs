@@ -10,11 +10,11 @@ This is to measure the number of atoms and hydrogen atoms in the database
 
 # List of database file paths and their display names
 db_files = [
-    ("MChem_DGMs/analysis/Databases/geom_drugs.db", "DRUGS"),
-    ("MChem_DGMs/analysis/Databases/Gschnet_drugs_filtered.db", "Gschnet"),
-    ("MChem_DGMs/analysis/Databases/EDM_drugs_filtered.db", "EDM"),
-    ("MChem_DGMs/analysis/Databases/GeoLDM_drugs_filtered.db", "GeoLDM"),
-    ("MChem_DGMs/analysis/Databases/JODO_drugs_filtered.db", "JODO")
+    ("MChem_DGMs/analysis/Databases/geom_drugs.db", "DRUGS_filtered"),
+    ("MChem_DGMs/analysis/Databases/Gschnet_drugs_filtered.db", "Gschnet_filtered"),
+    ("MChem_DGMs/analysis/Databases/EDM_drugs_filtered.db", "EDM_filtered"),
+    ("MChem_DGMs/analysis/Databases/GeoLDM_drugs_filtered.db", "GeoLDM_filtered"),
+    ("MChem_DGMs/analysis/Databases/JODO_drugs_filtered.db", "JODO_filtered")
 ]
 
 fig, axes = plt.subplots(1, 5, figsize=(12, 3), sharey=True)

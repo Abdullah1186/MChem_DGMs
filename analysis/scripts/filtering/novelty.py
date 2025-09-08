@@ -13,5 +13,5 @@ for row in db.select():
         novel_molecules.append(row)
 
 
-print(len(novel_molecules))
+print(f"Number of novel molecules: {len(novel_molecules)}")
 

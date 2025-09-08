@@ -1061,13 +1061,13 @@ def main():
 
         # If the user chooses, they can write or rewrite the files containing
         # the element composition data for each database.
-        choice2 = input("Generate new smiles data (y/n)?\n")
-        if choice2 == "y":
-            if choice1 in {"1","2","3"}:
-                for arg_set in args:
-                    generate_smiles(arg_set[0], arg_set[1])
-            else:
-                generate_smiles(args[0], args[1])
+        # choice2 = input("Generate new smiles data (y/n)?\n")
+        # if choice2 == "y":
+        #     if choice1 in {"1","2","3"}:
+        #         for arg_set in args:
+        #             generate_smiles(arg_set[0], arg_set[1])
+        #     else:
+        #         generate_smiles(args[0], args[1])
 
         while True:
             choice3 = input(

@@ -1,765 +1,0 @@
-/var/spool/slurmd/job3507396/slurm_script: line 11: module: command not found
-/var/spool/slurmd/job3507396/slurm_script: line 12: module: command not found
-/var/spool/slurmd/job3507396/slurm_script: line 13: module: command not found
-/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:43: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
-  result = getattr(asarray(obj), method)(*args, **kwds)
-wandb: Currently logged in as: abdullahalfekaiki (abdullahalfekaiki-university-of-warwick) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
-wandb: Tracking run with wandb version 0.19.6
-wandb: Run data is saved locally in /users/afekaiki/EDM/wandb/run-20250404_223633-0v8om9wb
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run edm_oe62_resume
-wandb: ⭐️ View project at https://wandb.ai/abdullahalfekaiki-university-of-warwick/EDM_oe62
-wandb: 🚀 View run at https://wandb.ai/abdullahalfekaiki-university-of-warwick/EDM_oe62/runs/0v8om9wb
-Namespace(aggregation_method='sum', attention=True, augment_noise=0, batch_size=64, break_train_epoch=False, clip_grad=True, condition_time=True, conditioning=[], context_node_nf=0, cuda=True, current_epoch=2686, data_augmentation=False, dataset='oe62', dequantization='argmax_variational', diffusion_loss_type='l2', diffusion_noise_precision=1e-05, diffusion_noise_schedule='polynomial_2', diffusion_steps=1000, dp=True, ema_decay=0.9999, exp_name='edm_oe62_resume', filter_molecule_size=None, filter_n_atoms=None, generate_epochs=1, include_charges=False, inv_sublayers=1, lr=0.0001, model='egnn_dynamics', n_epochs=3000, n_layers=4, n_report_steps=50, n_stability_samples=500, nf=256, no_cuda=False, no_wandb=False, norm_constant=1, normalization_factor=1.0, normalize_factors=[1, 4, 10], num_workers=0, ode_regularization=0.001, online=True, probabilistic_model='diffusion', remove_h=False, resume='/users/afekaiki/EDM/outputs/edm_oe62_resume', save_model=True, sequential=False, sin_embedding=False, start_epoch=2686, tanh=True, test_epochs=15, trace='hutch', visualize_every_batch=10000, wandb_usr=None)
-Namespace(aggregation_method='sum', attention=True, augment_noise=0, batch_size=64, break_train_epoch=False, clip_grad=True, condition_time=True, conditioning=[], context_node_nf=0, cuda=True, current_epoch=2686, data_augmentation=False, dataset='oe62', dequantization='argmax_variational', diffusion_loss_type='l2', diffusion_noise_precision=1e-05, diffusion_noise_schedule='polynomial_2', diffusion_steps=1000, dp=True, ema_decay=0.9999, exp_name='edm_oe62_resume', filter_molecule_size=None, filter_n_atoms=None, generate_epochs=1, include_charges=False, inv_sublayers=1, lr=0.0001, model='egnn_dynamics', n_epochs=3000, n_layers=4, n_report_steps=50, n_stability_samples=500, nf=256, no_cuda=False, no_wandb=False, norm_constant=1, normalization_factor=1.0, normalize_factors=[1, 4, 10], num_workers=0, ode_regularization=0.001, online=True, probabilistic_model='diffusion', remove_h=False, resume='/users/afekaiki/EDM/outputs/edm_oe62_resume', save_model=True, sequential=False, sin_embedding=False, start_epoch=2686, tanh=True, test_epochs=15, trace='hutch', visualize_every_batch=10000, wandb_usr=None)
-Entropy of n_nodes: H[N] -4.140960693359375
-alphas2 [9.99990000e-01 9.99988000e-01 9.99982000e-01 ... 2.59676966e-05
- 1.39959211e-05 1.00039959e-05]
-gamma [-11.51291546 -11.33059532 -10.92513058 ...  10.55863126  11.17673063
-  11.51251595]
-Training using 3 GPUs
-Epoch: 2686, iter: 0/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.3
-Epoch: 2686, iter: 50/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 0.7
-Epoch: 2686, iter: 100/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 6.4 while allowed 4.9
-Clipped gradient with value 7.5 while allowed 5.0
-Clipped gradient with value 39.2 while allowed 5.2
-Epoch: 2686, iter: 150/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 6.8 while allowed 4.8
-Clipped gradient with value 5.3 while allowed 5.1
-Epoch: 2686, iter: 200/769, Loss 4.37, NLL: 4.37, RegTerm: 0.0, GradNorm: 2.5
-Clipped gradient with value 15.0 while allowed 5.2
-Clipped gradient with value 5.9 while allowed 5.6
-Clipped gradient with value 12.7 while allowed 5.6
-Clipped gradient with value 7.2 while allowed 5.8
-Epoch: 2686, iter: 250/769, Loss 4.04, NLL: 4.04, RegTerm: 0.0, GradNorm: 1.5
-Epoch: 2686, iter: 300/769, Loss 4.27, NLL: 4.27, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 4.5 while allowed 4.3
-Clipped gradient with value 5.4 while allowed 4.5
-Clipped gradient with value 6.6 while allowed 4.7
-Epoch: 2686, iter: 350/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 0.7
-Epoch: 2686, iter: 400/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 2.4
-Clipped gradient with value 3.7 while allowed 3.3
-Clipped gradient with value 3.7 while allowed 3.6
-Epoch: 2686, iter: 450/769, Loss 3.99, NLL: 3.99, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 4.7 while allowed 3.7
-Clipped gradient with value 5.4 while allowed 3.7
-Epoch: 2686, iter: 500/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.3 while allowed 3.7
-Clipped gradient with value 7.2 while allowed 3.5
-Clipped gradient with value 5.3 while allowed 3.7
-Clipped gradient with value 5.1 while allowed 3.9
-Epoch: 2686, iter: 550/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 14.4 while allowed 3.8
-Clipped gradient with value 3.6 while allowed 3.4
-Epoch: 2686, iter: 600/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 1007.9 while allowed 3.5
-Clipped gradient with value 5.6 while allowed 3.7
-Clipped gradient with value 4.8 while allowed 3.9
-Clipped gradient with value 5.8 while allowed 4.1
-Clipped gradient with value 4.9 while allowed 4.3
-Epoch: 2686, iter: 650/769, Loss 4.34, NLL: 4.34, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 4.8 while allowed 4.5
-Clipped gradient with value 6.6 while allowed 4.8
-Clipped gradient with value 10.1 while allowed 4.8
-Epoch: 2686, iter: 700/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 0.8
-Epoch: 2686, iter: 750/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 1.1
-Epoch took 191.7 seconds.
-Epoch: 2687, iter: 0/769, Loss 4.02, NLL: 4.02, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 3.2 while allowed 3.1
-Clipped gradient with value 3.4 while allowed 3.1
-Clipped gradient with value 4.8 while allowed 4.2
-Epoch: 2687, iter: 50/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 9.5 while allowed 4.1
-Epoch: 2687, iter: 100/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 2.0
-Clipped gradient with value 13.0 while allowed 4.0
-Epoch: 2687, iter: 150/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 3.5 while allowed 3.4
-Clipped gradient with value 27138650.0 while allowed 3.1
-Clipped gradient with value 4.4 while allowed 3.3
-Epoch: 2687, iter: 200/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 0.5
-Clipped gradient with value 8.8 while allowed 3.4
-Epoch: 2687, iter: 250/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 4.4 while allowed 3.6
-Epoch: 2687, iter: 300/769, Loss 4.30, NLL: 4.30, RegTerm: 0.0, GradNorm: 4.4
-Clipped gradient with value 7.6 while allowed 3.8
-Clipped gradient with value 11.3 while allowed 4.0
-Epoch: 2687, iter: 350/769, Loss 4.01, NLL: 4.01, RegTerm: 0.0, GradNorm: 2.2
-Clipped gradient with value 3.9 while allowed 3.9
-Clipped gradient with value 4.4 while allowed 3.8
-Epoch: 2687, iter: 400/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 2.0
-Clipped gradient with value 4.5 while allowed 3.8
-Clipped gradient with value 4.9 while allowed 4.0
-Clipped gradient with value 10.6 while allowed 4.3
-Clipped gradient with value 5.2 while allowed 4.5
-Epoch: 2687, iter: 450/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 5.7 while allowed 4.1
-Epoch: 2687, iter: 500/769, Loss 4.25, NLL: 4.25, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 3.8 while allowed 3.7
-Epoch: 2687, iter: 550/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.3 while allowed 3.2
-Clipped gradient with value 4.3 while allowed 3.4
-Clipped gradient with value 6.6 while allowed 3.5
-Epoch: 2687, iter: 600/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 3.7 while allowed 3.5
-Clipped gradient with value 10.2 while allowed 3.4
-Epoch: 2687, iter: 650/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 5.9 while allowed 4.0
-Clipped gradient with value 33.4 while allowed 4.2
-Epoch: 2687, iter: 700/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 11.7 while allowed 4.7
-Clipped gradient with value 9.5 while allowed 5.2
-Epoch: 2687, iter: 750/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 1.1
-Epoch took 175.5 seconds.
-Epoch: 2688, iter: 0/769, Loss 4.32, NLL: 4.32, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 3.9 while allowed 3.4
-Epoch: 2688, iter: 50/769, Loss 4.01, NLL: 4.01, RegTerm: 0.0, GradNorm: 1.6
-Epoch: 2688, iter: 100/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 1.9
-Clipped gradient with value 11.4 while allowed 3.4
-Clipped gradient with value 3.7 while allowed 3.1
-Epoch: 2688, iter: 150/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 3.4 while allowed 3.2
-Clipped gradient with value 5.7 while allowed 3.3
-Epoch: 2688, iter: 200/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 4.0 while allowed 3.7
-Clipped gradient with value 3.8 while allowed 3.7
-Clipped gradient with value 3.6 while allowed 3.5
-Clipped gradient with value 4.0 while allowed 3.6
-Epoch: 2688, iter: 250/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 4.0
-Clipped gradient with value 8.4 while allowed 3.8
-Clipped gradient with value 6.7 while allowed 3.6
-Epoch: 2688, iter: 300/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 3.9 while allowed 3.5
-Clipped gradient with value 3.9 while allowed 3.8
-Epoch: 2688, iter: 350/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 2.4
-Clipped gradient with value 4.1 while allowed 4.0
-Clipped gradient with value 4.5 while allowed 3.8
-Epoch: 2688, iter: 400/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 4.5
-Clipped gradient with value 10.3 while allowed 4.0
-Epoch: 2688, iter: 450/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 4.7 while allowed 3.7
-Clipped gradient with value 4.5 while allowed 3.7
-Clipped gradient with value 4.5 while allowed 4.1
-Clipped gradient with value 8.5 while allowed 4.2
-Epoch: 2688, iter: 500/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 4.2 while allowed 4.0
-Epoch: 2688, iter: 550/769, Loss 4.28, NLL: 4.28, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 6.6 while allowed 3.9
-Clipped gradient with value 5.1 while allowed 4.0
-Clipped gradient with value 6.6 while allowed 4.2
-Epoch: 2688, iter: 600/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 4.1 while allowed 3.9
-Clipped gradient with value 6.2 while allowed 4.2
-Clipped gradient with value 5.0 while allowed 3.9
-Clipped gradient with value 6.3 while allowed 4.6
-Epoch: 2688, iter: 650/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 2.4
-Clipped gradient with value 5.3 while allowed 4.7
-Clipped gradient with value 3014667.2 while allowed 4.5
-Epoch: 2688, iter: 700/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 5.8 while allowed 4.1
-Epoch: 2688, iter: 750/769, Loss 4.18, NLL: 4.18, RegTerm: 0.0, GradNorm: 1.4
-Epoch took 175.2 seconds.
-Epoch: 2689, iter: 0/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 0.9
-Epoch: 2689, iter: 50/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 5.6 while allowed 3.5
-Epoch: 2689, iter: 100/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 4.0 while allowed 3.4
-Clipped gradient with value 5.7 while allowed 3.5
-Clipped gradient with value 5.8 while allowed 3.7
-Clipped gradient with value 4.5 while allowed 3.8
-Clipped gradient with value 4.5 while allowed 4.0
-Epoch: 2689, iter: 150/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 3.8
-Clipped gradient with value 4.4 while allowed 4.0
-Epoch: 2689, iter: 200/769, Loss 4.46, NLL: 4.46, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 4.9 while allowed 3.2
-Epoch: 2689, iter: 250/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.2 while allowed 3.2
-Clipped gradient with value 3.8 while allowed 3.7
-Epoch: 2689, iter: 300/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 1.0
-Epoch: 2689, iter: 350/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 3.5 while allowed 3.1
-Clipped gradient with value 4.1 while allowed 3.2
-Clipped gradient with value 3.8 while allowed 3.3
-Clipped gradient with value 4.5 while allowed 3.6
-Epoch: 2689, iter: 400/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 2.0
-Clipped gradient with value 17.1 while allowed 4.1
-Clipped gradient with value 5.8 while allowed 4.4
-Clipped gradient with value 5.4 while allowed 4.6
-Clipped gradient with value 7.4 while allowed 4.9
-Epoch: 2689, iter: 450/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 0.9
-Epoch: 2689, iter: 500/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 3.4 while allowed 3.3
-Clipped gradient with value 3.5 while allowed 3.4
-Clipped gradient with value 8.0 while allowed 3.6
-Epoch: 2689, iter: 550/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 2.1
-Clipped gradient with value 5.4 while allowed 4.1
-Clipped gradient with value 4.3 while allowed 4.2
-Clipped gradient with value 8.3 while allowed 4.5
-Epoch: 2689, iter: 600/769, Loss 4.30, NLL: 4.30, RegTerm: 0.0, GradNorm: 8.3
-Clipped gradient with value 5.2 while allowed 4.6
-Epoch: 2689, iter: 650/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 2.4
-Clipped gradient with value 4.8 while allowed 3.7
-Clipped gradient with value 10.6 while allowed 3.5
-Epoch: 2689, iter: 700/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 10877.6 while allowed 3.6
-Clipped gradient with value 5.2 while allowed 4.0
-Epoch: 2689, iter: 750/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 1.9
-Epoch took 176.3 seconds.
-Epoch: 2690, iter: 0/769, Loss 4.25, NLL: 4.25, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 4.2 while allowed 3.4
-Epoch: 2690, iter: 50/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 3.8 while allowed 3.8
-Clipped gradient with value 15.0 while allowed 4.2
-Clipped gradient with value 6.6 while allowed 4.3
-Epoch: 2690, iter: 100/769, Loss 4.27, NLL: 4.27, RegTerm: 0.0, GradNorm: 1.6
-Epoch: 2690, iter: 150/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 4.2 while allowed 4.2
-Clipped gradient with value 14.0 while allowed 4.1
-Clipped gradient with value 8.5 while allowed 4.1
-Epoch: 2690, iter: 200/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 2.4
-Clipped gradient with value 6.1 while allowed 3.7
-Clipped gradient with value 4.6 while allowed 3.8
-Clipped gradient with value 5.1 while allowed 4.2
-Epoch: 2690, iter: 250/769, Loss 4.46, NLL: 4.46, RegTerm: 0.0, GradNorm: 4.6
-Clipped gradient with value 12.1 while allowed 3.9
-Epoch: 2690, iter: 300/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 1.9
-Clipped gradient with value 3.3 while allowed 3.3
-Clipped gradient with value 5.6 while allowed 3.4
-Clipped gradient with value 5.0 while allowed 3.7
-Epoch: 2690, iter: 350/769, Loss 4.37, NLL: 4.37, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 3.7 while allowed 3.7
-Clipped gradient with value 7.6 while allowed 3.8
-Epoch: 2690, iter: 400/769, Loss 4.27, NLL: 4.27, RegTerm: 0.0, GradNorm: 2.6
-Clipped gradient with value 5.6 while allowed 3.8
-Clipped gradient with value 8.3 while allowed 4.1
-Clipped gradient with value 4.4 while allowed 4.3
-Epoch: 2690, iter: 450/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 2.3
-Clipped gradient with value 7.6 while allowed 4.5
-Clipped gradient with value 5.1 while allowed 4.7
-Clipped gradient with value 5.4 while allowed 5.0
-Epoch: 2690, iter: 500/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 5.3 while allowed 4.9
-Epoch: 2690, iter: 550/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.0 while allowed 3.3
-Clipped gradient with value 4.1 while allowed 3.4
-Epoch: 2690, iter: 600/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 4.1
-Epoch: 2690, iter: 650/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 3.2 while allowed 3.0
-Clipped gradient with value 126674.5 while allowed 3.2
-Epoch: 2690, iter: 700/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 3.8 while allowed 3.2
-Clipped gradient with value 7.1 while allowed 3.5
-Epoch: 2690, iter: 750/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 4.7 while allowed 3.7
-Epoch took 174.4 seconds.
-Epoch: 2691, iter: 0/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 2.8
-Epoch: 2691, iter: 50/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 3.5 while allowed 3.3
-Clipped gradient with value 6.3 while allowed 3.6
-Epoch: 2691, iter: 100/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.2 while allowed 3.9
-Epoch: 2691, iter: 150/769, Loss 4.26, NLL: 4.26, RegTerm: 0.0, GradNorm: 0.9
-Epoch: 2691, iter: 200/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 8.9 while allowed 3.3
-Epoch: 2691, iter: 250/769, Loss 4.26, NLL: 4.26, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 5.1 while allowed 3.2
-Clipped gradient with value 4.8 while allowed 3.4
-Clipped gradient with value 4.8 while allowed 3.9
-Epoch: 2691, iter: 300/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 2.6
-Clipped gradient with value 8.9 while allowed 3.8
-Epoch: 2691, iter: 350/769, Loss 4.27, NLL: 4.27, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.3 while allowed 3.8
-Clipped gradient with value 4.8 while allowed 4.0
-Clipped gradient with value 5.7 while allowed 4.2
-Epoch: 2691, iter: 400/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 8.1 while allowed 4.7
-Clipped gradient with value 4.8 while allowed 4.6
-Clipped gradient with value 903.8 while allowed 5.1
-Epoch: 2691, iter: 450/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 903.8
-Clipped gradient with value 6.6 while allowed 5.3
-Clipped gradient with value 9.3 while allowed 5.7
-Epoch: 2691, iter: 500/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 3.5 while allowed 3.5
-Epoch: 2691, iter: 550/769, Loss 4.26, NLL: 4.26, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 4.8 while allowed 3.6
-Clipped gradient with value 6.7 while allowed 3.7
-Clipped gradient with value 3.9 while allowed 3.8
-Epoch: 2691, iter: 600/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 11.2 while allowed 3.6
-Clipped gradient with value 4.8 while allowed 3.6
-Epoch: 2691, iter: 650/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 3.9 while allowed 3.4
-Epoch: 2691, iter: 700/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 4.8 while allowed 3.4
-Clipped gradient with value 4.8 while allowed 3.8
-Epoch: 2691, iter: 750/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 2.6
-Clipped gradient with value 5.0 while allowed 4.0
-Epoch took 173.0 seconds.
-Epoch: 2692, iter: 0/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 18.2 while allowed 4.3
-Clipped gradient with value 5.2 while allowed 4.4
-Epoch: 2692, iter: 50/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 3.0
-Epoch: 2692, iter: 100/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 3.2
-Clipped gradient with value 4.4 while allowed 4.0
-Clipped gradient with value 7.2 while allowed 4.4
-Epoch: 2692, iter: 150/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 1.7
-Clipped gradient with value 10.9 while allowed 4.1
-Epoch: 2692, iter: 200/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 6.0 while allowed 3.5
-Clipped gradient with value 4.3 while allowed 3.8
-Clipped gradient with value 4.8 while allowed 4.2
-Epoch: 2692, iter: 250/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 4.7 while allowed 4.7
-Clipped gradient with value 4.7 while allowed 3.7
-Epoch: 2692, iter: 300/769, Loss 4.27, NLL: 4.27, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 3.5 while allowed 3.5
-Clipped gradient with value 4.1 while allowed 3.7
-Clipped gradient with value 4.1 while allowed 3.9
-Clipped gradient with value 9.8 while allowed 4.1
-Epoch: 2692, iter: 350/769, Loss 4.04, NLL: 4.04, RegTerm: 0.0, GradNorm: 2.7
-Epoch: 2692, iter: 400/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 4.7 while allowed 3.5
-Epoch: 2692, iter: 450/769, Loss 4.44, NLL: 4.44, RegTerm: 0.0, GradNorm: 2.3
-Clipped gradient with value 4.8 while allowed 3.7
-Epoch: 2692, iter: 500/769, Loss 4.31, NLL: 4.31, RegTerm: 0.0, GradNorm: 3.0
-Clipped gradient with value 4.0 while allowed 3.6
-Epoch: 2692, iter: 550/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 4.0
-Clipped gradient with value 3.9 while allowed 3.2
-Epoch: 2692, iter: 600/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 3.3 while allowed 3.0
-Clipped gradient with value 5.1 while allowed 3.2
-Epoch: 2692, iter: 650/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 1.6
-Epoch: 2692, iter: 700/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 3.6 while allowed 3.3
-Epoch: 2692, iter: 750/769, Loss 4.53, NLL: 4.53, RegTerm: 0.0, GradNorm: 1.6
-Epoch took 172.8 seconds.
-Epoch: 2693, iter: 0/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 3.2 while allowed 2.9
-Clipped gradient with value 3.8 while allowed 3.1
-Epoch: 2693, iter: 50/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 6.8 while allowed 3.6
-Clipped gradient with value 4.7 while allowed 3.7
-Epoch: 2693, iter: 100/769, Loss 4.30, NLL: 4.30, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 3.9 while allowed 3.8
-Clipped gradient with value 4.6 while allowed 4.1
-Epoch: 2693, iter: 150/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 5.8 while allowed 4.4
-Clipped gradient with value 4.5 while allowed 4.5
-Epoch: 2693, iter: 200/769, Loss 4.18, NLL: 4.18, RegTerm: 0.0, GradNorm: 1.9
-Epoch: 2693, iter: 250/769, Loss 4.18, NLL: 4.18, RegTerm: 0.0, GradNorm: 2.3
-Clipped gradient with value 5.3 while allowed 3.8
-Clipped gradient with value 4.5 while allowed 4.0
-Epoch: 2693, iter: 300/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 4.0
-Clipped gradient with value 5.0 while allowed 4.3
-Clipped gradient with value 4.4 while allowed 4.3
-Clipped gradient with value 1115.4 while allowed 4.7
-Clipped gradient with value 35.1 while allowed 5.2
-Clipped gradient with value 16.8 while allowed 5.8
-Epoch: 2693, iter: 350/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 16.8
-Epoch: 2693, iter: 400/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 24.1 while allowed 4.2
-Clipped gradient with value 5.9 while allowed 4.5
-Clipped gradient with value 5.2 while allowed 4.9
-Epoch: 2693, iter: 450/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 5.2
-Epoch: 2693, iter: 500/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 24.9 while allowed 4.1
-Clipped gradient with value 4.3 while allowed 4.2
-Clipped gradient with value 6.3 while allowed 4.7
-Epoch: 2693, iter: 550/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 9.9 while allowed 4.2
-Clipped gradient with value 17.1 while allowed 4.2
-Epoch: 2693, iter: 600/769, Loss 4.04, NLL: 4.04, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 6.7 while allowed 4.4
-Epoch: 2693, iter: 650/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 5.2 while allowed 2.9
-Clipped gradient with value 88.1 while allowed 3.0
-Epoch: 2693, iter: 700/769, Loss 4.29, NLL: 4.29, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 3.2 while allowed 3.1
-Clipped gradient with value 5.6 while allowed 3.4
-Epoch: 2693, iter: 750/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 5.6
-Epoch took 173.7 seconds.
-Epoch: 2694, iter: 0/769, Loss 4.06, NLL: 4.06, RegTerm: 0.0, GradNorm: 0.6
-Clipped gradient with value 5.0 while allowed 3.5
-Clipped gradient with value 3.9 while allowed 3.5
-Clipped gradient with value 3.6 while allowed 3.5
-Epoch: 2694, iter: 50/769, Loss 4.02, NLL: 4.02, RegTerm: 0.0, GradNorm: 1.7
-Clipped gradient with value 5.6 while allowed 3.7
-Clipped gradient with value 9.1 while allowed 3.9
-Clipped gradient with value 4.7 while allowed 4.2
-Epoch: 2694, iter: 100/769, Loss 4.04, NLL: 4.04, RegTerm: 0.0, GradNorm: 2.5
-Clipped gradient with value 5.0 while allowed 4.0
-Clipped gradient with value 6.4 while allowed 3.9
-Epoch: 2694, iter: 150/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 3.6 while allowed 3.2
-Clipped gradient with value 3.7 while allowed 3.5
-Epoch: 2694, iter: 200/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 1.2
-Epoch: 2694, iter: 250/769, Loss 4.36, NLL: 4.36, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 5.3 while allowed 3.7
-Clipped gradient with value 5.9 while allowed 3.6
-Clipped gradient with value 7.2 while allowed 3.8
-Clipped gradient with value 3359112.2 while allowed 4.4
-Epoch: 2694, iter: 300/769, Loss 4.38, NLL: 4.38, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 11.3 while allowed 5.0
-Epoch: 2694, iter: 350/769, Loss 4.03, NLL: 4.03, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 7.4 while allowed 4.0
-Epoch: 2694, iter: 400/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 2.2
-Clipped gradient with value 4.1 while allowed 3.8
-Clipped gradient with value 4.3 while allowed 3.8
-Clipped gradient with value 4.1 while allowed 3.7
-Epoch: 2694, iter: 450/769, Loss 4.06, NLL: 4.06, RegTerm: 0.0, GradNorm: 2.2
-Clipped gradient with value 4.3 while allowed 3.6
-Clipped gradient with value 3.9 while allowed 3.7
-Epoch: 2694, iter: 500/769, Loss 4.24, NLL: 4.24, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 5.1 while allowed 4.1
-Clipped gradient with value 5.4 while allowed 4.5
-Clipped gradient with value 5.5 while allowed 4.7
-Clipped gradient with value 5.3 while allowed 4.9
-Epoch: 2694, iter: 550/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 5.3
-Clipped gradient with value 13.3 while allowed 5.0
-Clipped gradient with value 5.3 while allowed 5.2
-Epoch: 2694, iter: 600/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 7.1 while allowed 5.0
-Epoch: 2694, iter: 650/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 3.0
-Clipped gradient with value 8.9 while allowed 4.0
-Clipped gradient with value 5.5 while allowed 4.1
-Clipped gradient with value 16.6 while allowed 4.2
-Clipped gradient with value 5.1 while allowed 4.3
-Clipped gradient with value 7.6 while allowed 4.5
-Epoch: 2694, iter: 700/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 9.3 while allowed 4.6
-Clipped gradient with value 6.3 while allowed 4.9
-Clipped gradient with value 10.1 while allowed 5.0
-Epoch: 2694, iter: 750/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 2.5
-Clipped gradient with value 5.0 while allowed 4.6
-Epoch took 170.7 seconds.
-Epoch: 2695, iter: 0/769, Loss 4.18, NLL: 4.18, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 7.4 while allowed 5.1
-Epoch: 2695, iter: 50/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 3.3
-Clipped gradient with value 4.3 while allowed 4.1
-Epoch: 2695, iter: 100/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 3.9 while allowed 3.3
-Epoch: 2695, iter: 150/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 2.6
-Clipped gradient with value 5.4 while allowed 4.2
-Clipped gradient with value 17.3 while allowed 4.8
-Clipped gradient with value 9.5 while allowed 4.8
-Clipped gradient with value 9.4 while allowed 5.0
-Epoch: 2695, iter: 200/769, Loss 4.03, NLL: 4.03, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 6.6 while allowed 5.6
-Epoch: 2695, iter: 250/769, Loss 4.32, NLL: 4.32, RegTerm: 0.0, GradNorm: 1.9
-Clipped gradient with value 10.1 while allowed 3.8
-Clipped gradient with value 4.5 while allowed 4.0
-Clipped gradient with value 5.7 while allowed 3.8
-Epoch: 2695, iter: 300/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 2.1
-Clipped gradient with value 6.9 while allowed 4.8
-Clipped gradient with value 8.3 while allowed 4.9
-Epoch: 2695, iter: 350/769, Loss 4.06, NLL: 4.06, RegTerm: 0.0, GradNorm: 1.2
-Epoch: 2695, iter: 400/769, Loss 4.36, NLL: 4.36, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 6.2 while allowed 2.7
-Clipped gradient with value 28.6 while allowed 2.9
-Epoch: 2695, iter: 450/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 6.3 while allowed 3.3
-Epoch: 2695, iter: 500/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 6.3
-Clipped gradient with value 4.0 while allowed 3.7
-Clipped gradient with value 9.9 while allowed 4.1
-Epoch: 2695, iter: 550/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 3.6
-Clipped gradient with value 8.7 while allowed 4.3
-Epoch: 2695, iter: 600/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 5.2 while allowed 3.9
-Clipped gradient with value 4.7 while allowed 3.8
-Clipped gradient with value 3.7 while allowed 3.6
-Epoch: 2695, iter: 650/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 2.7
-Epoch: 2695, iter: 700/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 2.7
-Clipped gradient with value 4.1 while allowed 3.9
-Epoch: 2695, iter: 750/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 1.1
-Epoch took 171.2 seconds.
-Clipped gradient with value 6.9 while allowed 4.5
-Epoch: 2696, iter: 0/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 6.9
-Clipped gradient with value 5.3 while allowed 4.8
-Epoch: 2696, iter: 50/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 3.0
-Clipped gradient with value 6.1 while allowed 4.8
-Clipped gradient with value 8.9 while allowed 4.9
-Clipped gradient with value 5.0 while allowed 4.9
-Epoch: 2696, iter: 100/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 4.9 while allowed 4.8
-Epoch: 2696, iter: 150/769, Loss 4.29, NLL: 4.29, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 8.2 while allowed 3.3
-Clipped gradient with value 4.7 while allowed 3.3
-Epoch: 2696, iter: 200/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 4.2 while allowed 2.7
-Epoch: 2696, iter: 250/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 2.0
-Clipped gradient with value 5.3 while allowed 2.9
-Clipped gradient with value 5.4 while allowed 3.0
-Clipped gradient with value 4.0 while allowed 3.4
-Epoch: 2696, iter: 300/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 15.1 while allowed 4.1
-Clipped gradient with value 5.2 while allowed 4.3
-Epoch: 2696, iter: 350/769, Loss 4.22, NLL: 4.22, RegTerm: 0.0, GradNorm: 3.5
-Clipped gradient with value 7.1 while allowed 4.3
-Clipped gradient with value 4.6 while allowed 4.5
-Clipped gradient with value 6.9 while allowed 4.8
-Epoch: 2696, iter: 400/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 5.6 while allowed 4.4
-Clipped gradient with value 4.2 while allowed 4.1
-Clipped gradient with value 4.3 while allowed 4.2
-Epoch: 2696, iter: 450/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 5.3 while allowed 5.0
-Clipped gradient with value 10.4 while allowed 5.3
-Clipped gradient with value 8.3 while allowed 5.5
-Clipped gradient with value 8.5 while allowed 5.8
-Epoch: 2696, iter: 500/769, Loss 3.93, NLL: 3.93, RegTerm: 0.0, GradNorm: 3.2
-Epoch: 2696, iter: 550/769, Loss 4.06, NLL: 4.06, RegTerm: 0.0, GradNorm: 1.7
-Clipped gradient with value 4.1 while allowed 3.1
-Clipped gradient with value 3.6 while allowed 3.3
-Epoch: 2696, iter: 600/769, Loss 4.01, NLL: 4.01, RegTerm: 0.0, GradNorm: 1.9
-Clipped gradient with value 5.2 while allowed 4.0
-Epoch: 2696, iter: 650/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 5.6 while allowed 4.0
-Clipped gradient with value 4.4 while allowed 4.2
-Epoch: 2696, iter: 700/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 5.2 while allowed 4.2
-Clipped gradient with value 5.5 while allowed 4.6
-Clipped gradient with value 5.3 while allowed 4.6
-Epoch: 2696, iter: 750/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 0.8
-Epoch took 172.7 seconds.
-Epoch: 2697, iter: 0/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 5.7 while allowed 4.0
-/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py:204: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  flow_state_dict = torch.load(join(args.resume, 'generative_model.npy'))
-/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py:206: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  optim_state_dict = torch.load(join(args.resume, 'optim.npy'))
-Clipped gradient with value 5.8 while allowed 4.2
-Clipped gradient with value 4.7 while allowed 4.4
-Clipped gradient with value 5.3 while allowed 4.6
-Clipped gradient with value 5.4 while allowed 4.7
-Epoch: 2697, iter: 50/769, Loss 4.14, NLL: 4.14, RegTerm: 0.0, GradNorm: 2.0
-Clipped gradient with value 9.1 while allowed 3.8
-Epoch: 2697, iter: 100/769, Loss 4.35, NLL: 4.35, RegTerm: 0.0, GradNorm: 9.1
-Clipped gradient with value 4.1 while allowed 3.8
-Clipped gradient with value 5.5 while allowed 4.3
-Epoch: 2697, iter: 150/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 2.0
-Epoch: 2697, iter: 200/769, Loss 4.26, NLL: 4.26, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 6.3 while allowed 3.4
-Clipped gradient with value 4.0 while allowed 3.8
-Epoch: 2697, iter: 250/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 3.7 while allowed 3.3
-Clipped gradient with value 4.2 while allowed 3.5
-Clipped gradient with value 4.7 while allowed 3.8
-Epoch: 2697, iter: 300/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 6.4 while allowed 3.6
-Clipped gradient with value 4.7 while allowed 3.7
-Clipped gradient with value 4.2 while allowed 3.9
-Epoch: 2697, iter: 350/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.2
-Epoch: 2697, iter: 400/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 1.7
-Epoch: 2697, iter: 450/769, Loss 3.98, NLL: 3.98, RegTerm: 0.0, GradNorm: 0.4
-Clipped gradient with value 4.1 while allowed 4.0
-Epoch: 2697, iter: 500/769, Loss 4.31, NLL: 4.31, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 8.9 while allowed 4.0
-Clipped gradient with value 17.8 while allowed 4.2
-Epoch: 2697, iter: 550/769, Loss 4.02, NLL: 4.02, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 9.8 while allowed 3.8
-Clipped gradient with value 4.6 while allowed 4.4
-Epoch: 2697, iter: 600/769, Loss 4.15, NLL: 4.15, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 5.1 while allowed 4.8
-Epoch: 2697, iter: 650/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 0.5
-Clipped gradient with value 7.5 while allowed 3.4
-Clipped gradient with value 4.7 while allowed 4.0
-Epoch: 2697, iter: 700/769, Loss 4.30, NLL: 4.30, RegTerm: 0.0, GradNorm: 2.6
-Epoch: 2697, iter: 750/769, Loss 4.39, NLL: 4.39, RegTerm: 0.0, GradNorm: 1.4
-Epoch took 170.8 seconds.
-Epoch: 2698, iter: 0/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 3.1 while allowed 3.1
-Clipped gradient with value 4.4 while allowed 3.5
-Epoch: 2698, iter: 50/769, Loss 3.99, NLL: 3.99, RegTerm: 0.0, GradNorm: 0.9
-Epoch: 2698, iter: 100/769, Loss 4.18, NLL: 4.18, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 7.9 while allowed 4.3
-Clipped gradient with value 15.2 while allowed 4.1
-Epoch: 2698, iter: 150/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 15.2
-Clipped gradient with value 6.0 while allowed 3.8
-Epoch: 2698, iter: 200/769, Loss 4.36, NLL: 4.36, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 5.9 while allowed 4.0
-Clipped gradient with value 5.5 while allowed 4.2
-Clipped gradient with value 5.0 while allowed 4.3
-Epoch: 2698, iter: 250/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 8.4 while allowed 3.6
-Clipped gradient with value 3.6 while allowed 3.5
-Clipped gradient with value 4.2 while allowed 3.7
-Epoch: 2698, iter: 300/769, Loss 4.20, NLL: 4.20, RegTerm: 0.0, GradNorm: 3.2
-Clipped gradient with value 5.3 while allowed 3.8
-Epoch: 2698, iter: 350/769, Loss 4.39, NLL: 4.39, RegTerm: 0.0, GradNorm: 2.3
-Clipped gradient with value 3.7 while allowed 3.7
-Clipped gradient with value 4.7 while allowed 3.9
-Clipped gradient with value 5.3 while allowed 4.1
-Epoch: 2698, iter: 400/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 2.2
-Clipped gradient with value 5.6 while allowed 4.5
-Clipped gradient with value 6.1 while allowed 4.8
-Clipped gradient with value 9.4 while allowed 5.1
-Epoch: 2698, iter: 450/769, Loss 4.05, NLL: 4.05, RegTerm: 0.0, GradNorm: 1.1
-Epoch: 2698, iter: 500/769, Loss 4.18, NLL: 4.18, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 7.0 while allowed 3.7
-Epoch: 2698, iter: 550/769, Loss 4.01, NLL: 4.01, RegTerm: 0.0, GradNorm: 1.4
-Clipped gradient with value 3.7 while allowed 3.6
-Clipped gradient with value 5.6 while allowed 3.6
-Epoch: 2698, iter: 600/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 0.7
-Clipped gradient with value 3.7 while allowed 3.6
-Epoch: 2698, iter: 650/769, Loss 4.31, NLL: 4.31, RegTerm: 0.0, GradNorm: 3.0
-Epoch: 2698, iter: 700/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 2.7
-Epoch: 2698, iter: 750/769, Loss 4.03, NLL: 4.03, RegTerm: 0.0, GradNorm: 1.3
-Epoch took 174.5 seconds.
-Epoch: 2699, iter: 0/769, Loss 4.31, NLL: 4.31, RegTerm: 0.0, GradNorm: 1.5
-Clipped gradient with value 3.5 while allowed 2.6
-Clipped gradient with value 3.5 while allowed 2.6
-Clipped gradient with value 4.5 while allowed 2.8
-Clipped gradient with value 3.0 while allowed 3.0
-Clipped gradient with value 3.5 while allowed 3.1
-Epoch: 2699, iter: 50/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 3.7 while allowed 3.3
-Clipped gradient with value 3.7 while allowed 3.4
-Epoch: 2699, iter: 100/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.3
-Epoch: 2699, iter: 150/769, Loss 4.03, NLL: 4.03, RegTerm: 0.0, GradNorm: 0.5
-Clipped gradient with value 30.0 while allowed 3.2
-Clipped gradient with value 4.1 while allowed 3.3
-Clipped gradient with value 4.2 while allowed 3.9
-Epoch: 2699, iter: 200/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 4.0 while allowed 3.5
-Clipped gradient with value 8.1 while allowed 3.6
-Epoch: 2699, iter: 250/769, Loss 4.10, NLL: 4.10, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 3.7 while allowed 3.6
-Epoch: 2699, iter: 300/769, Loss 4.07, NLL: 4.07, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 4.7 while allowed 3.7
-Clipped gradient with value 4.6 while allowed 3.7
-Clipped gradient with value 5.1 while allowed 4.2
-Epoch: 2699, iter: 350/769, Loss 4.38, NLL: 4.38, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 6.5 while allowed 4.3
-Epoch: 2699, iter: 400/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 1.3
-Clipped gradient with value 4.4 while allowed 3.7
-Clipped gradient with value 4.2 while allowed 4.1
-Epoch: 2699, iter: 450/769, Loss 3.99, NLL: 3.99, RegTerm: 0.0, GradNorm: 1.4
-Epoch: 2699, iter: 500/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 6.9 while allowed 3.1
-Clipped gradient with value 4.5 while allowed 3.1
-Epoch: 2699, iter: 550/769, Loss 4.06, NLL: 4.06, RegTerm: 0.0, GradNorm: 2.2
-Clipped gradient with value 5.6 while allowed 3.3
-Epoch: 2699, iter: 600/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 0.6
-Clipped gradient with value 4.0 while allowed 3.5
-Clipped gradient with value 5.2 while allowed 3.8
-Epoch: 2699, iter: 650/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 1.8
-Clipped gradient with value 4.5 while allowed 3.1
-Clipped gradient with value 3.9 while allowed 3.2
-Epoch: 2699, iter: 700/769, Loss 3.97, NLL: 3.97, RegTerm: 0.0, GradNorm: 1.2
-Clipped gradient with value 3.7 while allowed 3.2
-Clipped gradient with value 5.4 while allowed 3.6
-Epoch: 2699, iter: 750/769, Loss 4.00, NLL: 4.00, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 5.4 while allowed 4.0
-Epoch took 172.8 seconds.
-Epoch: 2700, iter: 0/769, Loss 4.09, NLL: 4.09, RegTerm: 0.0, GradNorm: 1.4
-Did not find stable molecule, showing last sample.
-Generated molecule: Positions tensor([[[-1.1312e+00,  4.8842e-01, -3.7355e+00],
-         [-1.5432e+00,  1.1181e+00, -4.9158e+00],
-         [ 2.9700e-01,  2.7287e+00,  1.2878e+00],
-         ...,
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00]],
-
-        [[ 2.5627e-03, -1.8153e+00,  1.8991e+00],
-         [-1.6529e+00, -1.7349e+00,  1.2679e+00],
-         [ 9.0332e-01,  3.7470e-01, -2.2817e+00],
-         ...,
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00]],
-
-        [[-1.4135e+00, -3.5877e-01, -6.9428e-01],
-         [-2.3731e+00, -1.2973e+00, -1.2329e+00],
-         [ 1.7383e+00,  1.8731e+00, -5.9749e-01],
-         ...,
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00]],
-
-        [[ 2.1114e-01,  8.6856e-01, -1.1289e+00],
-         [-5.5590e-02,  1.3390e+00,  9.3428e-01],
-         [-8.5635e-01, -3.3908e+00,  1.6793e+00],
-         ...,
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00],
-         [ 0.0000e+00,  0.0000e+00,  0.0000e+00]]], device='cuda:0')
-Sampling took 50.13 seconds
-Creating gif with 110 images
-Clipped gradient with value 9.8 while allowed 4.0
-Clipped gradient with value 4.3 while allowed 3.9
-Epoch: 2700, iter: 50/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 4.4 while allowed 3.1
-Epoch: 2700, iter: 100/769, Loss 4.08, NLL: 4.08, RegTerm: 0.0, GradNorm: 1.0
-Clipped gradient with value 5.0 while allowed 3.3
-Clipped gradient with value 7.0 while allowed 3.4
-Clipped gradient with value 49.8 while allowed 3.8
-Epoch: 2700, iter: 150/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 2.5
-Clipped gradient with value 4.3 while allowed 3.4
-Clipped gradient with value 3.7 while allowed 3.3
-Epoch: 2700, iter: 200/769, Loss 4.12, NLL: 4.12, RegTerm: 0.0, GradNorm: 2.8
-Clipped gradient with value 4.5 while allowed 3.6
-Epoch: 2700, iter: 250/769, Loss 4.13, NLL: 4.13, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 4.6 while allowed 4.1
-Clipped gradient with value 6.0 while allowed 4.5
-Clipped gradient with value 5.0 while allowed 4.8
-Clipped gradient with value 7.0 while allowed 5.0
-Epoch: 2700, iter: 300/769, Loss 4.23, NLL: 4.23, RegTerm: 0.0, GradNorm: 2.8
-Clipped gradient with value 6.8 while allowed 5.0
-Clipped gradient with value 22689238.0 while allowed 5.0
-Epoch: 2700, iter: 350/769, Loss 4.32, NLL: 4.32, RegTerm: 0.0, GradNorm: 2.5
-Clipped gradient with value 5.7 while allowed 5.2
-Epoch: 2700, iter: 400/769, Loss 4.11, NLL: 4.11, RegTerm: 0.0, GradNorm: 0.8
-Clipped gradient with value 3.7 while allowed 3.0
-Epoch: 2700, iter: 450/769, Loss 4.19, NLL: 4.19, RegTerm: 0.0, GradNorm: 0.5
-Clipped gradient with value 4.7 while allowed 3.3
-Clipped gradient with value 4.3 while allowed 3.5
-Epoch: 2700, iter: 500/769, Loss 4.21, NLL: 4.21, RegTerm: 0.0, GradNorm: 0.6
-Clipped gradient with value 4.1 while allowed 3.8
-Clipped gradient with value 5.7 while allowed 3.9
-Clipped gradient with value 10.8 while allowed 4.1
-Epoch: 2700, iter: 550/769, Loss 4.16, NLL: 4.16, RegTerm: 0.0, GradNorm: 0.8
-Epoch: 2700, iter: 600/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.1
-Clipped gradient with value 10.4 while allowed 3.2
-Clipped gradient with value 3.6 while allowed 3.4
-Epoch: 2700, iter: 650/769, Loss 4.25, NLL: 4.25, RegTerm: 0.0, GradNorm: 0.9
-Clipped gradient with value 5.0 while allowed 3.4
-Clipped gradient with value 6.7 while allowed 3.5
-Epoch: 2700, iter: 700/769, Loss 4.17, NLL: 4.17, RegTerm: 0.0, GradNorm: 1.6
-Clipped gradient with value 5.0 while allowed 3.7
-Clipped gradient with value 6.8 while allowed 3.7
-Epoch: 2700, iter: 750/769, Loss 4.04, NLL: 4.04, RegTerm: 0.0, GradNorm: 1.7
-Clipped gradient with value 12.2 while allowed 3.5
-Epoch took 239.0 seconds.
-{'log_SNR_max': 11.51291561126709, 'log_SNR_min': -11.512516021728516}
-Analyzing molecule stability at epoch 2700...
- Val NLL 	 epoch: 2700, iter: 0/97, NLL: 168.73
- Val NLL 	 epoch: 2700, iter: 50/97, NLL: -111.29
-[1;34mwandb[0m: 
-[1;34mwandb[0m: 🚀 View run [33medm_oe62_resume[0m at: [34mhttps://wandb.ai/abdullahalfekaiki-university-of-warwick/EDM_oe62/runs/0v8om9wb[0m
-[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250404_223633-0v8om9wb/logs[0m
-Traceback (most recent call last):
-  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py", line 280, in <module>
-    main()
-  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/main_oe62.py", line 248, in main
-    nll_val = train_test.test(args, dataloaders['val'], epoch, model_ema_dp, device, dtype,
-  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/train_test.py", line 139, in test
-    nll, _, _ = losses.compute_loss_and_nll(args, eval_model, nodes_dist, x, h,
-  File "/users/afekaiki/EDM/e3_diffusion_for_molecules/qm9/losses.py", line 23, in compute_loss_and_nll
-    nll = generative_model(x, h, node_mask, edge_mask, context)
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 185, in forward
-    replicas = self.replicate(self.module, self.device_ids[:len(inputs)])
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 190, in replicate
-    return replicate(module, device_ids, not torch.is_grad_enabled())
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/parallel/replicate.py", line 110, in replicate
-    param_copies = _broadcast_coalesced_reshape(params, devices, detach)
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/parallel/replicate.py", line 79, in _broadcast_coalesced_reshape
-    return comm.broadcast_coalesced(tensors, devices)
-  File "/users/afekaiki/EDM/myenv/lib/python3.8/site-packages/torch/nn/parallel/comm.py", line 58, in broadcast_coalesced
-    return torch._C._broadcast_coalesced(tensors, devices, buffer_size)
-RuntimeError: NCCL Error 1: unhandled cuda error (run with NCCL_DEBUG=INFO for details)

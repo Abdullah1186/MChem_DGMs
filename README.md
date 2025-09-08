@@ -8,42 +8,61 @@ This repository contains three generative deep learning models for molecular gen
 - **EDM (E(n)-equivariant Diffusion Model)**
 - **GeoLDM (Geometric Latent Diffusion Model)**
 
-> **Important!** The models are provided for data storage purposes, such as hyperparameters, arguments, and trained models. Due to numerous dependencies across the different model's data, they may not run directly. Instructions for cloning and running these models can be found here:  🔗 [Maurer Group Docs](https://maurergroup.github.io/MaurerGroupDocs/)
+### [Models](/models/) contains all the trained models for each DGM that were trained in this project not including pretrained models.
+
+- EDM and GeoLDM
+
+<span style="color: red"> Something about zip files </span>
+
 
 
 ## Datasets in this Work
 
-All training  and generated datasets can be found in `MChem_DGMs/analysis/Databases`.
 
 ### G-SchNet
 - Trained on: `QM9`, `OE62`, and `GEOM-DRUGS`
 
 ### EDM
-- Trained on: `QM9`, `OE62`, and `GEOM-DRUGS`
+- Trained on: `QM9`, `OE62`, and `GEOM-DRUGS`. EDM repo only trains on QM9 and GEOM-DRUGS, a model that can be trained on the OE62 dataset can be found [here](https://github.com/Abdullah1186/OE62-Trainable-EDM.git)
 
 ### GeoLDM
-- Trained on: `OE62` only and was not able to train successfully, so no molecules were generated. 💾 You can download the pretrained models for `QM9` and `GEOM-DRUGS` from the following link:  🔗 [Download Pretrained Models](https://drive.google.com/drive/folders/1EQ9koVx-GA98kaKBS8MZ_jJ8g4YhdKsL)
+- Trained on: `OE62` only and was not able to train successfully, so no molecules were generated. You can download the GeoLDM publication's pretrained models for `QM9` and `GEOM-DRUGS` from the following link:  🔗 [Download Pretrained Models](https://drive.google.com/drive/folders/1EQ9koVx-GA98kaKBS8MZ_jJ8g4YhdKsL)
 
 
 
 ## Analysis
 
-All analysis can be performed on filtered and non-filtered datasets.  
-All analyses (except saturation analysis) can be sampled—either by weight or atom count—to match the training data.  
-This sampling method is the same as used in the [G-SchNet biases paper](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00665).
 
-### SMILES
 
-Almost all analyses run on SMILES! To add SMILES to your database, use the script at:  
-`MChem_DGMs/analysis/scripts/smiles/SMILES.ipynb`
+- All analysis can be performed on filtered and non-filtered datasets, filtering is done by taking the largest fragment (if disconnected) and removing invalid and non-unique molecules.  
+- All analyses (except saturation analysis) can be sampled—either by weight or atom count—to match the training data.  
+- The sampling method is the same as used in the [G-SchNet biases paper](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00665) where in most plots data is sampled based on the atom count of the training dataset.
 
-### Filtering
+### Downloading all the training datasets and generated molecule datasets needed for analysis.
+
+This data can be downloaded [here](ttps://moleculardatabases.s3.eu-west-2.amazonaws.com/databases.tar.gz).
+
+This is a quick and easy set of commands to download them into the right directory:
+```bash 
+cd MChem_DGMs/analysis
+wget https://moleculardatabases.s3.eu-west-2.amazonaws.com/databases.tar.gz
+tar -xzvf databases.tar.gz
+```
+
+### Creating SMILES
+
+Some of the analyses run on SMILES through a json file of smiles related to every ASE dataset. All databases in this project already have SMILES in their ASE database and have a json file of SMILES for analysis, however to add SMILES to your own database, and to generate and add a json file of your SMILES to the Database directory for analysis, use the script:  
+`MChem_DGMs/analysis/scripts/smiles/SMILES.py`.
+
+> make sure that ypur database is in the MChem_DGMs/analysis/Database directory
+
+### Filtering datasets
 
 The `MChem_DGMs/analysis/scripts/filtering` directory contains scripts and tools for post-processing and filtering generated molecules. 
 
 - The `MChem_DGMs/analysis/scripts/filtering/filter_disconnects.py` script will filter the database by taking the largest fragment from a disconnected structure.
 
-- The `MChem_DGMs/analysis/scripts/filtering/schnetpack_filter.sh` script will filter the molecules based on validity, uniqueness and radicals, and will print out a .txt file with metrics. This script calls apon the `MChem_DGMs/analysis/scripts/filtering/sort_db.py` script that turns the database into a dictionary, and the `/root/MChem_DGMs/analysis/scripts/filtering/filter_generated.py` script that filters the dictionary and turns the dictionary back into an ASE database. 
+- The `MChem_DGMs/analysis/scripts/filtering/schnetpack_filter.sh` script will filter the molecules based on validity, uniqueness and radicals, and will print out a .txt file with metrics. This script calls apon the `MChem_DGMs/analysis/scripts/filtering/sort_db.py` script that turns the database into a dictionary, and the `/root/MChem_DGMs/analysis/scripts/filtering/filter_generated.py` script that filters the dictionary and turns the dictionary back into an ASE database. Finally the `MChem_DGMs/analysis/scripts/filtering/novelty.py` script will tell you how many novel molecules you have normally it is negligible. 
 
 
 
@@ -51,50 +70,36 @@ The `MChem_DGMs/analysis/scripts/filtering` directory contains scripts and tools
 
 ### Structural and Molecular Analysis
 
-Located in:  `MChem_DGMs/analysis/scripts/molecular_analysis` and includes:
+All scripts located in:  `MChem_DGMs/analysis/scripts/molecular_analysis/`.
 
-### Saturation Analysis  
+###  - Saturation Analysis  
 Plots showing the number of H atoms vs the total number of atoms.
 
-![atomvH](./analysis/Plots/QM9/atomsvsH.png)
 
 
-### Structural Analysis
+###  - Structural Analysis
 
 Includes:
 - **Bond distance distributions**
 
 
-Example:
-
-![dist](./analysis/Plots/QM9/c-c%20dist%20.png)
 
 
-### Elemental Distribution Analysis
+
+###  - Elemental Distribution Analysis
 
 Includes:
 - **Elemental composition**
 - **Elemental distribution on an element-by-element basis**
 - **Weight distribution**
 
-Examples:
-
-![elements](./analysis/Plots/OE62/element%20dist%20.png)  
-![oxygen](./analysis/Plots/QM9/O%20dist%20.png)  
-![weight](./analysis/Plots/DRUGS/Weight%20distrabution%20.png)
 
 
-
-### Functional Group Analysis
+###  - Functional Group Analysis
 
 Includes:
 - **Functional group distribution**
 - **Ring chemistry**
-
-Examples:
-
-![Amine](./analysis/Plots/QM9/Aminedist.png)  
-![rings](./analysis/Plots/QM9/RINGS%20.png)
 
 
 
