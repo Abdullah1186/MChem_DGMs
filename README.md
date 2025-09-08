@@ -4,13 +4,15 @@
 
 This repository contains three generative deep learning models for molecular generation:
 
-- **G-SchNet**
-- **EDM (E(n)-equivariant Diffusion Model)**
-- **GeoLDM (Geometric Latent Diffusion Model)**
+- [**G-SchNet**](https://github.com/atomistic-machine-learning/schnetpack-gschnet.git)
+- [**EDM (E(n)-equivariant Diffusion Model)**](https://github.com/ehoogeboom/e3_diffusion_for_molecules.git)
+- [**GeoLDM (Geometric Latent Diffusion Model)**](https://github.com/MinkaiXu/GeoLDM.git)
+- [**JODO (Learning Joint 2D & 3D Diffusion Models for Complete Molecule Generation)**](https://github.com/GRAPH-0/JODO.git)
 
-### [Models](/models/) contains all the trained models for each DGM that were trained in this project not including pretrained models.
+### [Models](/models/) contains all the trained models for each DGM that were trained in, <span style="color: red">this project not including pretrained models.</span>
 
-- EDM and GeoLDM
+- EDM and GeoLDM use 
+- Gschnet uses 
 
 <span style="color: red"> Something about zip files </span>
 
@@ -51,18 +53,17 @@ tar -xzvf databases.tar.gz
 
 ### Creating SMILES
 
-Some of the analyses run on SMILES through a json file of smiles related to every ASE dataset. All databases in this project already have SMILES in their ASE database and have a json file of SMILES for analysis, however to add SMILES to your own database, and to generate and add a json file of your SMILES to the Database directory for analysis, use the script:  
-`MChem_DGMs/analysis/scripts/smiles/SMILES.py`.
+Some of the analyses run on SMILES through a json file of smiles related to every ASE dataset. All databases in this project already have SMILES in their ASE database and have a json file of SMILES for analysis, however to add SMILES to your own database, and to generate and add a json file of your SMILES to the Database directory for analysis, use the [SMILES](analysis/scripts/database_manipulation/SMILES.py) script.
 
-> make sure that ypur database is in the MChem_DGMs/analysis/Database directory
+> Make sure that your database is in the MChem_DGMs/analysis/Database directory
 
 ### Filtering datasets
 
-The `MChem_DGMs/analysis/scripts/filtering` directory contains scripts and tools for post-processing and filtering generated molecules. 
+[Filtering](analysis/scripts/filtering) contains scripts and tools for post-processing and filtering generated molecules. 
 
-- The `MChem_DGMs/analysis/scripts/filtering/filter_disconnects.py` script will filter the database by taking the largest fragment from a disconnected structure.
+- [filter_disconnects.py](analysis/scripts/filtering/filter_disconnects.py) will filter the database by taking the largest fragment from a disconnected structure.
 
-- The `MChem_DGMs/analysis/scripts/filtering/schnetpack_filter.sh` script will filter the molecules based on validity, uniqueness and radicals, and will print out a .txt file with metrics. This script calls apon the `MChem_DGMs/analysis/scripts/filtering/sort_db.py` script that turns the database into a dictionary, and the `/root/MChem_DGMs/analysis/scripts/filtering/filter_generated.py` script that filters the dictionary and turns the dictionary back into an ASE database. Finally the `MChem_DGMs/analysis/scripts/filtering/novelty.py` script will tell you how many novel molecules you have normally it is negligible. 
+- [schnetpack_filter](/analysis/scripts/filtering/schnetpack_filter.sh) will filter the molecules based on validity, uniqueness and radicals, and will print out a .txt file with metrics. This script calls apon the [sort_db](/analysis/scripts/filtering/sort_db.py) script that turns the database into a dictionary, and the [filter_generated](/analysis/scripts/filtering/filter_generated.py) script that filters the dictionary and turns the dictionary back into an ASE database. Finally the [novelty](/analysis/scripts/filtering/novelty.py) script will tell you how many novel molecules you have normally it is negligible. 
 
 
 
@@ -70,7 +71,7 @@ The `MChem_DGMs/analysis/scripts/filtering` directory contains scripts and tools
 
 ### Structural and Molecular Analysis
 
-All scripts located in:  `MChem_DGMs/analysis/scripts/molecular_analysis/`.
+All scripts in  [molecular_analysis](/analysis/scripts/molecular_analysis/)
 
 ###  - Saturation Analysis  
 Plots showing the number of H atoms vs the total number of atoms.
@@ -107,7 +108,7 @@ Includes:
 
 ## Plots
 
-> **Important!** - The `/MChem_DGMs/plots` directory contains plots that are used in the thesis. However, due to the compuational expensiveness many of the DRUGS plots will take a while - consider using a HPC. Furthermore, the analysis scripts provided can plot other graphs that are not used in the thesis. 
+> **Important!** - [plots](/plots/) contains plots that are used in the thesis. However, due to the compuational expensiveness many of the DRUGS plots will take a while - consider using a HPC. Furthermore, the analysis scripts provided can plot other graphs that are not used in the thesis. 
 
 
 

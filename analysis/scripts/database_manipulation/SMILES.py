@@ -12,12 +12,14 @@ from rdkit.Chem import Draw
 from tqdm import tqdm
 import json 
 
+# Define the base directory for databases
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+base_dir = os.path.join(repo_root, "analysis", "Databases")
+
+
 data_name = input("Enter the database name (with .db extension): ")
 
-base_dir = "analysis/Databases"
-
-
-# Connect to the database
+# Connect to the databas
 db = connect(f"{base_dir}/{data_name}")
 
 # Create a directory for structures if it doesn't exist

@@ -3,6 +3,7 @@ molecules or the distribution of a particular element in the ase
 databases. This data can be visualised either for an individual 
 or all at once.
 """
+import os 
 from cProfile import label
 from calendar import c
 import pickle 
@@ -24,7 +25,13 @@ from scipy.stats import gaussian_kde, linregress
 from cycler import cycler
 
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
+# Repo root (go up 3 levels from SMILES.py in your case)
+repo_root = os.path.abspath(os.path.join(script_dir, "../../.."))
+
+# Databases directory
+base_dir = os.path.join(repo_root, "analysis", "Databases")
 
 size=20
 params = {'legend.fontsize': size,
@@ -83,7 +90,7 @@ def generate_data(database, data_file):
     # print(sqlite3.sqlite_version)
     # Connecting to one of the databases.
 
-    db = ase.db.connect(f"MChem_DGMs/analysis/Databases/{database}")
+    db = ase.db.connect(f"base_dir/{database}")
 
     # Initialising an empty dictionary to store the number of times each
     # element occurs in total.
@@ -119,7 +126,7 @@ def generate_data(database, data_file):
     # Adds the dictionary containing elemental composition data for the
     # whole database to the empty list, then dumps the list to a json file.
     all_element_data.append(element_counts_total)
-    f = open(f"MChem_DGMs/analysis/Databases/{data_file}", "w", encoding = "cp1252")
+    f = open(f"{base_dir}/{data_file}", "w", encoding = "cp1252")
     json.dump(all_element_data, f)
     f.close()
 
@@ -132,7 +139,7 @@ def get_average_composition(data_file, use_valid = False, sample = None, split =
     """
 
     if use_valid == False:
-        f = open(f"MChem_DGMs/analysis/Databases/{data_file}", "r", encoding = "cp1252")
+        f = open(f"{base_dir}/{data_file}", "r", encoding = "cp1252")
         ecomp_data = json.load(f)
         if sample is not None:
             summary = ecomp_data[-1]
@@ -189,7 +196,7 @@ def get_element_counts(data_file, symbol, use_valid = False, sample = None):
     """A function which gets the count of a chosen element in each molecule."""
 
     if use_valid == False:
-        f = open(f"MChem_DGMs/analysis/Databases/{data_file}", "r", encoding = "cp1252")
+        f = open(f"{base_dir}/{data_file}", "r", encoding = "cp1252")
         ecomp_data = json.load(f)
         if sample is not None:
             summary = ecomp_data[-1]
@@ -696,7 +703,7 @@ def get_atoms_data(data_file, use_valid, sample = None, split = False, homo_lumo
     """
 
     if use_valid == False:
-        f = open(f"MChem_DGMs/analysis/Databases/{data_file}", "r", encoding = "cp1252")
+        f = open(f"{base_dir}/{data_file}", "r", encoding = "cp1252")
         ecomp_data = json.load(f)
         if sample is not None:
             summary = ecomp_data[-1]
@@ -1250,7 +1257,7 @@ def plot_atoms_data_all2(args, mode = "all", samples = None, split = False):
 def get_valid(data_file, sample = None):
     """Gets a list of elemental compositions for valid molecules"""
 
-    f = open(f"MChem_DGMs/analysis/Databases/{data_file}", "r", encoding = "cp1252")
+    f = open(f"{base_dir}/{data_file}", "r", encoding = "cp1252")
     ecomp_data = json.load(f)
     # print(ecomp_data)
     if sample is not None:
@@ -1259,7 +1266,7 @@ def get_valid(data_file, sample = None):
         ecomp_data.append(summary)
 
     smiles_file = data_file.replace("ecomp.json", "smiles.json")
-    f = open(f"MChem_DGMs/analysis/Databases/{smiles_file}", "r", encoding = "cp1252")
+    f = open(f"{base_dir}/{smiles_file}", "r", encoding = "cp1252")
     smiles_data = json.load(f)
     # print("SMILES ",smiles_data)
     if sample is not None:

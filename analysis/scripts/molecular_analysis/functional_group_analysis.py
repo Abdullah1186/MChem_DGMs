@@ -23,6 +23,14 @@ import matplotlib as mpl
 sys.path.append(os.path.join(RDConfig.RDContribDir, 'IFG'))
 from ifg import identify_functional_groups
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Repo root (go up 3 levels from SMILES.py in your case)
+repo_root = os.path.abspath(os.path.join(script_dir, "../../.."))
+
+# Databases directory
+base_dir = os.path.join(repo_root, "analysis", "Databases")
+
 
 size=20
 params = {'legend.fontsize': size,
@@ -74,7 +82,7 @@ def set_label(database):
 def generate_smiles(database, smiles_file):
     """Defining a function to generate smiles data for a chosen database."""
 
-    db = connect(f"MChem_DGMs/analysis/Databases/{database}")
+    db = connect(f"{base_dir}/{database}")
     smiles_list = []
 
     for row in db.select():
@@ -84,7 +92,7 @@ def generate_smiles(database, smiles_file):
         
         smiles_list.append(smiles)
 
-    f = open(f"MChem_DGMs/analysis/Databases/{smiles_file}", "w", encoding = "cp1252")
+    f = open(f"{base_dir}/{smiles_file}", "w", encoding = "cp1252")
     json.dump(smiles_list, f)
     f.close()
 
@@ -94,7 +102,7 @@ def find_substructure(database, smiles_file, substructure,sample):
     desired substructure.
     """
 
-    f = open(f"MChem_DGMs/analysis/Databases/{smiles_file}", "r", encoding = "cp1252")
+    f = open(f"{base_dir}/{smiles_file}", "r", encoding = "cp1252")
     smiles_list = json.load(f)
     f.close()
     patt = Chem.MolFromSmarts(substructure)
@@ -123,7 +131,7 @@ def find_substructure(database, smiles_file, substructure,sample):
         except AttributeError:
             failed.append(smiles)
 
-    db = connect(f"MChem_DGMs/analysis/Databases/{database}")
+    db = connect(f"{base_dir}/{database}")
 
     if database in ["qm9_filtered.db", "OE62_full.db","geom_drugs.db","qm9_smiles.db"]: ## data bases that are training data
         #molecules_count = db.count()
@@ -284,7 +292,7 @@ def get_misc_info(database, smiles_file):
     unsaturation (or index of hydrogen deficiency, IDH)
     """
 
-    f = open(f"MChem_DGMs/analysis/Databases/{smiles_file}", "r", encoding = "cp1252")
+    f = open(f"{base_dir}/{smiles_file}", "r", encoding = "cp1252")
     smiles_list = json.load(f)
     f.close()
 
@@ -770,7 +778,7 @@ def show_correlation(args,database, smiles_file, substructure):
 
     _, smiles_matches = find_substructure(args ,database, smiles_file, substructure)
 
-    db = connect(f"MChem_DGMs/analysis/Databases/{database}")
+    db = connect(f"{base_dir}/{database}")
     group_absent_ps = []
     group_present_ps = []
 
@@ -862,7 +870,7 @@ def get_functional_groups(args):
 
     def get_group_dict(smiles_file):
         print(smiles_file)
-        with open(f"MChem_DGMs/analysis/Databases/{smiles_file}", "r", encoding = "cp1252") as f:
+        with open(f"{base_dir}/{smiles_file}", "r", encoding = "cp1252") as f:
             smiles_list = json.load(f)
             group_dict = {}
             for smiles in smiles_list:

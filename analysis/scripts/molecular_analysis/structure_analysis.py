@@ -7,6 +7,16 @@ from ase.neighborlist import natural_cutoffs, neighbor_list
 from scipy.stats import gaussian_kde
 from elemental_composition_analysis import sample_generated
 import matplotlib as mpl
+import os 
+
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Repo root (go up 3 levels from SMILES.py in your case)
+repo_root = os.path.abspath(os.path.join(script_dir, "../../.."))
+
+# Databases directory
+base_dir = os.path.join(repo_root, "analysis", "Databases")
 
 size=20
 params = {'legend.fontsize': size,
@@ -52,7 +62,7 @@ def get_interatomic_distances(database, atom_pair, sample = None):
 
     distances_list = []
 
-    db = connect(f"MChem_DGMs/analysis/Databases/{database}")
+    db = connect(f"{base_dir}/{database}")
 
     # Convert rows to atoms and get the chemical symbols of atoms in the 
     # molecule.
@@ -109,7 +119,7 @@ def plot_distances(databases, atom_pair, samples = None, bonded = False):
         else:
             molecules = get_neighbours(database)
             all_distances = []
-            with connect(f"MChem_DGMs/analysis/Databases/{database[0]}") as db:
+            with connect(f"{base_dir}/{database[0]}") as db:
                 for idx, row in enumerate(db.select()):
                     atoms = row.toatoms()
                     atom1s = molecules[idx][0]
@@ -154,7 +164,7 @@ def get_neighbours(database):
     between them for a single database.
     """
     neighbours = []
-    with connect(f"MChem_DGMs/analysis/Databases/{database[0]}") as db:
+    with connect(f"{base_dir}/{database[0]}") as db:
         for row in db.select():
             atoms = row.toatoms()
             cutoffs = natural_cutoffs(atoms, mult = 1.1)
