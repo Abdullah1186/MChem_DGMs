@@ -9,12 +9,10 @@ This repository contains three generative deep learning models for molecular gen
 - [**GeoLDM (Geometric Latent Diffusion Model)**](https://github.com/MinkaiXu/GeoLDM.git)
 - [**JODO (Learning Joint 2D & 3D Diffusion Models for Complete Molecule Generation)**](https://github.com/GRAPH-0/JODO.git)
 
-### [Models](/models/) contains all the trained models for each DGM that were trained in, <span style="color: red">this project not including pretrained models.</span>
+### [Models](/models/) contains all the files of the trained models for each DGM that were trained in this project, not including pretrained models.
 
-- EDM and GeoLDM use 
-- Gschnet uses 
 
-<span style="color: red"> Something about zip files </span>
+> **Some of these files are ziped e.g. Some optim.npy files due to their big size.** 
 
 
 
@@ -29,6 +27,9 @@ This repository contains three generative deep learning models for molecular gen
 
 ### GeoLDM
 - Trained on: `OE62` only and was not able to train successfully, so no molecules were generated. You can download the GeoLDM publication's pretrained models for `QM9` and `GEOM-DRUGS` from the following link:  🔗 [Download Pretrained Models](https://drive.google.com/drive/folders/1EQ9koVx-GA98kaKBS8MZ_jJ8g4YhdKsL)
+
+### JODO 
+- Pretrained on `GEOM-DRUGS`. You can download the JODO's publication's pretrained models for `QM9` and `GEOM-DRUGS` from the following link:  🔗 [Download Pretrained Models](https://zenodo.org/record/8002902/files/exp_uncond.zip)
 
 
 
@@ -63,7 +64,7 @@ Some of the analyses run on SMILES through a json file of smiles related to ever
 
 - [filter_disconnects.py](analysis/scripts/filtering/filter_disconnects.py) will filter the database by taking the largest fragment from a disconnected structure.
 
-- [schnetpack_filter](/analysis/scripts/filtering/schnetpack_filter.sh) will filter the molecules based on validity, uniqueness and radicals, and will print out a .txt file with metrics. This script calls apon the [sort_db](/analysis/scripts/filtering/sort_db.py) script that turns the database into a dictionary, and the [filter_generated](/analysis/scripts/filtering/filter_generated.py) script that filters the dictionary and turns the dictionary back into an ASE database. Finally the [novelty](/analysis/scripts/filtering/novelty.py) script will tell you how many novel molecules you have normally it is negligible. 
+- [schnetpack_filter](analysis/scripts/filtering/schnetpack_filter.sh) will filter the molecules based on validity, uniqueness and radicals, and will print out a .txt file with metrics. This script calls apon the [sort_db](analysis/scripts/filtering/sort_db.py) script that turns the database into a dictionary, and the [filter_generated](analysis/scripts/filtering/filter_generated.py) script that filters the dictionary and turns the dictionary back into an ASE database. Finally the [novelty](analysis/scripts/filtering/novelty.py) script will tell you how many novel molecules you have normally it is negligible. 
 
 
 
@@ -71,14 +72,15 @@ Some of the analyses run on SMILES through a json file of smiles related to ever
 
 ### Structural and Molecular Analysis
 
-All scripts in  [molecular_analysis](/analysis/scripts/molecular_analysis/)
+All scripts in  [molecular_analysis](analysis/scripts/molecular_analysis/)
 
-###  - Saturation Analysis  
+###  - [Saturation Analysis](analysis/scripts/molecular_analysis/saturation_analysis.py)  
 Plots showing the number of H atoms vs the total number of atoms.
 
 
 
-###  - Structural Analysis
+###  - [Structural Analysis](analysis/scripts/molecular_analysis/structure_analysis.py)
+
 
 Includes:
 - **Bond distance distributions**
@@ -87,7 +89,7 @@ Includes:
 
 
 
-###  - Elemental Distribution Analysis
+###  - [Elemental Analysis](analysis/scripts/molecular_analysis/elemental_composition_analysis.py)
 
 Includes:
 - **Elemental composition**
@@ -96,7 +98,7 @@ Includes:
 
 
 
-###  - Functional Group Analysis
+###  - [Functional Group Analysis](analysis/scripts/molecular_analysis/functional_group_analysis.py)
 
 Includes:
 - **Functional group distribution**
@@ -108,13 +110,26 @@ Includes:
 
 ## Plots
 
-> **Important!** - [plots](/plots/) contains plots that are used in the thesis. However, due to the compuational expensiveness many of the DRUGS plots will take a while - consider using a HPC. Furthermore, the analysis scripts provided can plot other graphs that are not used in the thesis. 
+> **Important!** - [plots](analysis/plots/). Due to the compuational expensiveness many of the DRUGS plots will take a while - consider using a HPC. 
+
+### **Example Plots**:
+
+| DRUGS Functional Group Data | QM9 Elemental Subplots |
+|---------------|--------------|
+| <img src="analysis/Plots/DRUGS/filtered/fg_data.png" width="1000"> | <img src="analysis/Plots/QM9/arrays/subplots_QM9.png" width="550"> |
+
+| DRUGS Elemental Subplots | DRUGS Saturation Plot |
+|----------------|-----------------|
+| <img src="analysis/Plots/DRUGS/arrays/subplots_DRUGS.png" width="600"> | <img src="analysis/Plots/DRUGS/filtered/saturation.png" width="1100"> |
+
+
+
 
 
 
 ## GEOM-DRUGS Repository
 
-The GEOM-DRUGS repository explains how the database works, as it is not an ASE-compatible database.
+The GEOM-DRUGS repository explains how the database works, as it is not an ASE database.
 
 🔗 [Clone the Repo Here](https://github.com/learningmatter-mit/geom.git)
 
@@ -123,7 +138,7 @@ The GEOM-DRUGS repository explains how the database works, as it is not an ASE-c
 ## Disclaimers and Extra Notes
 
 - Many features of the code do not currently work, especially in the functional group script. Feel free to contribute fixes~!
-- Francesco Bartucca is the original creator of the elemental, structural, and functional group analysis code. I have only tweaked it for my own data and added some extra features like sampling based on atom count.
+- Francesco Bartucca is the original creator of the elemental, structural, and functional group analysis code. I have only tweaked it for my own data and added some extra features.
 - The EDM model for DRUGS is located on the SULIS HPC, which is currently inaccessible. For information on generating molecules using EDM and the DRUGS dataset, see:  
   🔗 [Maurer Group Docs](https://maurergroup.github.io/MaurerGroupDocs/)
 
