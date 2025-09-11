@@ -1,7 +1,8 @@
 from ase.db import connect
 from ase.io import read, write
 from io import StringIO
-from openbabel import pybel
+import openbabel
+import pybel
 import numpy as np
 
 ''' This script filters disconnected molecules in a database.

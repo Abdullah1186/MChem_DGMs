@@ -361,8 +361,8 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
     """
 
     # IHD barplot
-    num_datasets = len(args)
-    databases = [arg_set[0] for arg_set in args]
+    # num_datasets = len(args)
+    # databases = [arg_set[0] for arg_set in args]
     # plt.bar(databases, ihd, edgecolor = "black", align = "edge", width = 0.3)
     # database_labels = ["\n" + set_label(database) if databases.index(database) % 2 == 0 else set_label(database) for database in databases]
 
@@ -382,80 +382,80 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
 
     #Total rings barplot
     ring_types = ("none", "aromatic", "unsaturated aliphatic", "saturated")
-    num_datasets = len(args)
-    bar_width = 0.8 / num_datasets
-    shifts = np.arange(-num_datasets / 2, num_datasets / 2) * bar_width + bar_width/2
+    # num_datasets = len(args)
+    # bar_width = 0.8 / num_datasets
+    # shifts = np.arange(-num_datasets / 2, num_datasets / 2) * bar_width + bar_width/2
 
-    plt.figure(figsize=(20, 20))
+    # plt.figure(figsize=(20, 20))
 
-    for ring_type in ring_types:
-        for i, arg_set in enumerate(args):
-            if ring_type == "none":
-                rings_data = rings[i]
-            else:
-                rings_data = ring_type_nums[i][ring_type]
-            bins = np.arange(max(rings_data) + 1) - 0.5
-            shifted_bins = bins + shifts[i]
-            plt.hist(
-                rings_data,
-                bins = shifted_bins,
-                edgecolor = "black",
-                width = bar_width,
-                rwidth = bar_width,
-                label = set_label(arg_set[0]),
-                density = True
-                )
+    # for ring_type in ring_types:
+    #     for i, arg_set in enumerate(args):
+    #         if ring_type == "none":
+    #             rings_data = rings[i]
+    #         else:
+    #             rings_data = ring_type_nums[i][ring_type]
+    #         bins = np.arange(max(rings_data) + 1) - 0.5
+    #         shifted_bins = bins + shifts[i]
+    #         plt.hist(
+    #             rings_data,
+    #             bins = shifted_bins,
+    #             edgecolor = "black",
+    #             width = bar_width,
+    #             rwidth = bar_width,
+    #             label = set_label(arg_set[0]),
+    #             density = True
+    #             )
 
-        if ring_type == "none":
-            ring_type = "all"
+    #     if ring_type == "none":
+    #         ring_type = "all"
 
-        plt.xlabel("Count")
-        plt.ylabel("Density")
-        if len(args) == 8:
-            plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in Thiols databases")
-        elif len(args) == 5:
-            plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in OE62 databases")
-        elif len(args) == 3:
-            plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in OE62")
-        else:
-            plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in qm9 databases")
-        plt.margins(x=0)
-        if ring_type == "all":
-            plt.xticks(np.arange(max([max(rings_data) for rings_data in rings]) + 1))
-        else:
-            plt.xticks(np.arange(max([max(rings_data[ring_type]) for rings_data in ring_type_nums]) + 1))
-        plt.legend()
+    #     plt.xlabel("Count")
+    #     plt.ylabel("Density")
+    #     if len(args) == 8:
+    #         plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in Thiols databases")
+    #     elif len(args) == 5:
+    #         plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in OE62 databases")
+    #     elif len(args) == 3:
+    #         plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in OE62")
+    #     else:
+    #         plt.title(f"Histogram Showing Distribution of {ring_type} Ring Numbers in qm9 databases")
+    #     plt.margins(x=0)
+    #     if ring_type == "all":
+    #         plt.xticks(np.arange(max([max(rings_data) for rings_data in rings]) + 1))
+    #     else:
+    #         plt.xticks(np.arange(max([max(rings_data[ring_type]) for rings_data in ring_type_nums]) + 1))
+    #     plt.legend()
         #plt.show()
 
     # Aromatic rings barplot
-    num_atoms = []
+    # num_atoms = []
 
-    for database in aro_atoms:
-        num_atoms += list(set(database))
+    # for database in aro_atoms:
+    #     num_atoms += list(set(database))
 
-    num_atoms = sorted(list(set(num_atoms)))
-    xs = np.arange(len(num_atoms))
-    x_labels = [str(i) for i in num_atoms]
-    shifts = np.arange(-num_datasets / 2, num_datasets / 2) * bar_width + bar_width/2
+    # num_atoms = sorted(list(set(num_atoms)))
+    # xs = np.arange(len(num_atoms))
+    # x_labels = [str(i) for i in num_atoms]
+    # shifts = np.arange(-num_datasets / 2, num_datasets / 2) * bar_width + bar_width/2
 
-    for i, arg_set in enumerate(args):
-        heights = []
-        for num in num_atoms:
-            heights.append(aro_atoms[i].count(num))
-        heights = (np.array(heights)/len(aro_atoms[i])) * 100
-        shifted_xs = xs + shifts[i]
+    # for i, arg_set in enumerate(args):
+    #     heights = []
+    #     for num in num_atoms:
+    #         heights.append(aro_atoms[i].count(num))
+    #     heights = (np.array(heights)/len(aro_atoms[i])) * 100
+    #     shifted_xs = xs + shifts[i]
 
-        plt.bar(
-            shifted_xs,
-            heights,
-            width = bar_width,
-            edgecolor = "black",
-            label = set_label(arg_set[0])
-        )
+    #     plt.bar(
+    #         shifted_xs,
+    #         heights,
+    #         width = bar_width,
+    #         edgecolor = "black",
+    #         label = set_label(arg_set[0])
+    #     )
     
-    plt.xticks(np.arange(len(num_atoms)), labels = x_labels)
-    plt.xlabel("Atoms in Ring")
-    plt.ylabel("Density")
+    # plt.xticks(np.arange(len(num_atoms)), labels = x_labels)
+    # plt.xlabel("Atoms in Ring")
+    # plt.ylabel("Density")
     # if len(args) == 8:
     #     plt.title("Barplot Showing Number of Atoms in Aromatic Rings in Thiols databases")
     # elif len(args) == 5:
@@ -464,46 +464,46 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
     #     plt.title("Barplot Showing Number of Atoms in Aromatic Rings in OE62+THz databases")
     # else:
     #     plt.title("Barplot Showing Number of Atoms in Aromatic Rings in qm9 databases")
-    plt.legend()
-    plt.margins(x=0)
-    #plt.show()
+    # plt.legend()
+    # plt.margins(x=0)
+    # plt.show()
 
     # Ring Types barplot
-    xs = np.arange(len(ring_types))
-    x_labels = ring_types
-    shifts = np.arange(-num_datasets / 2, num_datasets / 2) * bar_width + bar_width/2
+    # xs = np.arange(len(ring_types))
+    # x_labels = ring_types
+    # shifts = np.arange(-num_datasets / 2, num_datasets / 2) * bar_width + bar_width/2
 
-    for i, arg_set in enumerate(args):
-        heights = []
-        for ring_type in ring_types:
-            if ring_type == "none":
-                heights.append((rings[i].count(0) / len(get_valid(arg_set[1]))) * 100)
-            else:
-                heights.append((ring_type_counts[i][ring_type] / len(get_valid(arg_set[1]))) * 100)
-        shifted_xs = xs + shifts[i]
+    # for i, arg_set in enumerate(args):
+    #     heights = []
+    #     for ring_type in ring_types:
+    #         if ring_type == "none":
+    #             heights.append((rings[i].count(0) / len(get_valid(arg_set[1]))) * 100)
+    #         else:
+    #             heights.append((ring_type_counts[i][ring_type] / len(get_valid(arg_set[1]))) * 100)
+    #     shifted_xs = xs + shifts[i]
 
-        plt.bar(
-            shifted_xs,
-            heights,
-            width = bar_width,
-            edgecolor = "black",
-            label = set_label(arg_set[0])
-        )
+    #     plt.bar(
+    #         shifted_xs,
+    #         heights,
+    #         width = bar_width,
+    #         edgecolor = "black",
+    #         label = set_label(arg_set[0])
+    #     )
 
-    plt.xticks(np.arange(len(ring_types)), labels = x_labels)
-    plt.xlabel("Ring Type")
-    plt.ylabel("Density")
-    if len(args) == 8:
-        plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in Thiols databases")
-    elif len(args) == 5:
-        plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in OE62 databases")
-    elif len(args) == 3:
-        plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in OE62")
-    else:
-        plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in qm9 databases")
-    plt.legend()
-    plt.margins(x=0)
-    #plt.show()
+    # plt.xticks(np.arange(len(ring_types)), labels = x_labels)
+    # plt.xlabel("Ring Type")
+    # plt.ylabel("Density")
+    # if len(args) == 8:
+    #     plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in Thiols databases")
+    # elif len(args) == 5:
+    #     plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in OE62 databases")
+    # elif len(args) == 3:
+    #     plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in OE62")
+    # else:
+    #     plt.title("Barplot Showing Proportion of Molecules with Different Ring Types in qm9 databases")
+    # plt.legend()
+    # plt.margins(x=0)
+    # plt.show()
 
     #Combined types/counts (single database)
     colors = ["blue", "orange", "green", "red", "purple"]
@@ -564,9 +564,6 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
         #     del args[2]
         #     del args[1]
         generated_samples = sample_generated(args, sample_data = data, bin_width = bin_width, use_valid = True, split = split)
-        # with open("/root/test","wb") as fp:
-        #     pickle.dump(generated_samples, fp)
-
         args = original_args
 
     for i, arg_set in enumerate(args):
@@ -582,98 +579,34 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
         if valid[-1] == "INVALID":
             valid = valid[:-1]
 
-        for smiles in valid:
-            if "Au" in smiles:
-                contains_gold.append(1)
-            else:
-                contains_gold.append(0)
+        
 
         for ring_type in ring_types:
             if ring_type == "none":
-                if database == "OE62":
-                    rings_OE62 = []
-                    for n, m in enumerate(contains_gold):
-                        if m == 0:
-                            rings_OE62.append(rings[0][n])
-                    if use_sampled == "y":
-                        rings_OE62 = [rings for idx, rings in enumerate(rings_OE62) if idx in generated_samples[0]]
-                    height_none = rings_OE62.count(0) / len(rings_OE62)
 
-                elif database == "THz":
-                    rings_THz = []
-                    for n, m in enumerate(contains_gold):
-                        if m == 1:
-                            rings_THz.append(rings[0][n])
-                    if use_sampled == "y":
-                        rings_THz = [rings for idx, rings in enumerate(rings_THz) if idx in generated_samples[1]]
-                    height_none = rings_THz.count(0) / len(rings_THz)
-
+                if use_sampled == "y" and i != 0:
+                    rings_list = [rings for idx, rings in enumerate(rings[i]) if idx in generated_samples[i - 1]]
+                    height_none = (rings_list.count(0)) / len(generated_samples[i - 1])
                 else:
-                    # if len(args) == 4:
-                    #     if use_sampled == "y":
-                    #         rings_list = [rings for idx, rings in enumerate(rings[i - 1]) if idx in generated_samples[i]]
-                    #         height_none = (rings_list.count(0)) / len(generated_samples[i])
-                    #     else:
-                    #         rings_list = rings[i - 1]
-                    #         height_none = (rings_list.count(0)) / len(get_valid(arg_set[1]))
-                    # else:
-                    if use_sampled == "y" and i != 0:
-                        rings_list = [rings for idx, rings in enumerate(rings[i]) if idx in generated_samples[i - 1]]
-                        height_none = (rings_list.count(0)) / len(generated_samples[i - 1])
-                    else:
-                        rings_list = rings[i]
-                        height_none = (rings_list.count(0)) / len(get_valid(arg_set[1]))
+                    rings_list = rings[i]
+                    height_none = (rings_list.count(0)) / len(get_valid(arg_set[1]))
 
             else:
-                # if len(args) == 4: 
-                #     if i in (0, 1):
-                #         all_rings_data = ring_type_nums[0][ring_type]
-                #     else:
-                #         rings_data = ring_type_nums[i - 1][ring_type]
-                #         stack_count = ring_type_counts[i - 1][ring_type]
-                #         if use_sampled == "y":
-                #             rings_data = [data for idx, data in enumerate(rings_data) if idx in generated_samples[i]]
-
-                
                 rings_data = ring_type_nums[i][ring_type]
                 stack_count = ring_type_counts[i][ring_type]
                 if use_sampled == "y":
                     rings_data = [data for idx, data in enumerate(rings_data) if idx in generated_samples[i - 1]]
+                else: 
+                    rings_data = ring_type_nums[i][ring_type]
+                    
+                
 
-                # if database == "OE62" and len(args) == 4:
-                #     rings_data = []
-                #     for n, m in enumerate(contains_gold):
-                #         if m == 0:
-                #             rings_data.append(all_rings_data[n])
-                #     if use_sampled == "y":
-                #         rings_data = [data for idx, data in enumerate(rings_data) if idx in generated_samples[0]]
-                #     stack_count = len(rings_data) - rings_data.count(0)
-                #     if use_sampled == "y":
-                #         stack_density = stack_count / len(generated_samples[0])
-                #     else:
-                #         stack_density = stack_count / contains_gold.count(0)
-
-                if database == "THz":
-                    rings_data = []
-                    for n, m in enumerate(contains_gold):
-                        if m == 1:
-                            rings_data.append(all_rings_data[n])
-                    if use_sampled == "y":
-                        rings_data = [data for idx, data in enumerate(rings_data) if idx in generated_samples[1]]
-                    stack_count = len(rings_data) - rings_data.count(0)
-                    if use_sampled == "y":
-                        stack_density = stack_count / len(generated_samples[1])
-                    else:
-                        stack_density = stack_count / contains_gold.count(1)
-
+                if use_sampled == "y":
+                    stack_density = stack_count / len(generated_samples[i - 1])
                 else:
-                    if use_sampled == "y":
-                        # if len(args) == 4:
-                        #     stack_density = stack_count / len(generated_samples[i])
-                        # else:
-                        stack_density = stack_count / len(generated_samples[i - 1])
-                    else:
-                        stack_density = stack_count / len(get_valid(arg_set[1]))
+                    stack_density = stack_count / len(get_valid(arg_set[1])) 
+
+                    
                 unique_nums = sorted(list(set(rings_data)))
 
                 for j in unique_nums:
@@ -719,6 +652,7 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
 
         for j, key in enumerate(new_keys):
             color = colors[j]
+            
             if j == 4:
                 j = "4+"
             if i == 0:
@@ -769,7 +703,7 @@ def plot_misc_data(args, rings, ring_type_nums, aro_atoms, ring_type_counts, ihd
     plt.margins(x=0)
     plt.tight_layout()
     plt.show()
-    plt.savefig(f"/root/MChem_DGMs/analysis/Plots/DRUGS/rings.pdf", format='pdf', dpi=300)
+    #plt.savefig(f"/root/MChem_DGMs/analysis/Plots/DRUGS/rings.pdf", format='pdf', dpi=300)
 
 def show_correlation(args,database, smiles_file, substructure):
     """Shows distribution of p values for a given database with and without

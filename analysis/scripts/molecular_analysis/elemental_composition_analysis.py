@@ -90,7 +90,7 @@ def generate_data(database, data_file):
     # print(sqlite3.sqlite_version)
     # Connecting to one of the databases.
 
-    db = ase.db.connect(f"base_dir/{database}")
+    db = ase.db.connect(f"{base_dir}/{database}")
 
     # Initialising an empty dictionary to store the number of times each
     # element occurs in total.

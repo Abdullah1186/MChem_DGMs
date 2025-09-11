@@ -1,4 +1,4 @@
-# Comparison of Molecular Generation Models: GSchNet, EDM, and GeoLDM
+# Comparison of Molecular Generation Models: GSchNet, EDM, GeoLDM and JODO 
 
 ## Models 
 
@@ -13,6 +13,7 @@ This repository contains three generative deep learning models for molecular gen
 
 
 > **Some of these files are ziped e.g. Some optim.npy files due to their big size.** 
+
 
 
 
@@ -40,6 +41,15 @@ This repository contains three generative deep learning models for molecular gen
 - All analysis can be performed on filtered and non-filtered datasets, filtering is done by taking the largest fragment (if disconnected) and removing invalid and non-unique molecules.  
 - All analyses (except saturation analysis) can be sampled—either by weight or atom count—to match the training data.  
 - The sampling method is the same as used in the [G-SchNet biases paper](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00665) where in most plots data is sampled based on the atom count of the training dataset.
+### setting up enviroment 
+
+```shell
+# Create the environment
+conda env create -f environment.yml
+
+# Activate it
+conda activate DGM-env
+```
 
 ### Downloading all the training datasets and generated molecule datasets needed for analysis.
 
@@ -139,9 +149,8 @@ The GEOM-DRUGS repository explains how the database works, as it is not an ASE d
 
 - Many features of the code do not currently work, especially in the functional group script. Feel free to contribute fixes~!
 - Francesco Bartucca is the original creator of the elemental, structural, and functional group analysis code. I have only tweaked it for my own data and added some extra features.
-- The EDM model for DRUGS is located on the SULIS HPC, which is currently inaccessible. For information on generating molecules using EDM and the DRUGS dataset, see:  
-  🔗 [Maurer Group Docs](https://maurergroup.github.io/MaurerGroupDocs/)
+- The EDM model for DRUGS is located on the SULIS HPC, which is currently inaccessible. For information on generating molecules using EDM and the DRUGS dataset, see: [EDM Repo](https://github.com/atomistic-machine-learning/schnetpack-gschnet.git)
+
 
 ---
-
 Feel free to explore, modify, and extend the models and tools provided here for your own molecular generation research~! 💫🧪

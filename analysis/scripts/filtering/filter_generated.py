@@ -337,7 +337,8 @@ if __name__ == '__main__':
             #print(len(res)))
 
             target_db = os.path.join(os.path.dirname(args.data_path),
-                                     'generated_molecules.db')
+                                     f'{args.data_path}'.split('/')[-1].split('.')[0] +
+                                     '_filtered.db')
     else:
         print("here")
         print(f'\n\nFusing .mol_dict files in folder {args.data_path}...')

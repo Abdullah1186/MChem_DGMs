@@ -7,7 +7,6 @@ from IPython.display import display
 import subprocess
 import openbabel
 import pybel
-from openbabel import pybel
 from rdkit.Chem import Draw
 from tqdm import tqdm
 import json 
