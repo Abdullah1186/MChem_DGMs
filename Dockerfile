@@ -2,7 +2,7 @@
 FROM continuumio/miniconda3
 
 # Set working directory
-WORKDIR /app
+WORKDIR /MChem_DGMs
 
 # Copy environment.yml into the container
 COPY environment.yml .
