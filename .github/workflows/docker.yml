@@ -8,6 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+
+    permissions:   # 👈 add this block
+      contents: read
+      packages: write
+
+
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
