@@ -53,12 +53,12 @@ conda activate DGM-env
 
 ### Downloading all the training datasets and generated molecule datasets needed for analysis.
 
-This data can be downloaded [here](ttps://moleculardatabases.s3.eu-west-2.amazonaws.com/databases.tar.gz).
+This data can be downloaded [here](https://drive.google.com/file/d/17J7eKYIDHq-kcvxhZupIaXcV2co8juiO/view?usp=drive_link).
 
 This is a quick and easy set of commands to download them into the right directory:
 ```bash 
 cd MChem_DGMs/analysis
-wget https://moleculardatabases.s3.eu-west-2.amazonaws.com/databases.tar.gz
+wget --no-check-certificate "https://drive.usercontent.google.com/download?id=17J7eKYIDHq-kcvxhZupIaXcV2co8juiO&export=download&confirm=t" -O databases.tar.gz
 tar -xzvf databases.tar.gz
 ```
 

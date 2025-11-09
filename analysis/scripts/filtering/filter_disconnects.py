@@ -8,8 +8,8 @@ import numpy as np
 ''' This script filters disconnected molecules in a database.
 It retains the largest fragment and adds a SMILES representation of it.'''
 
-db = connect('/root/MChem_DGMs/analysis/Databases/JODO_drugs_raw.db')
-filtered_db_path = '/root/MChem_DGMs/analysis/Databases/JODO_drugs_cleaned.db'
+db = connect('/root/MChem_DGMs/analysis/Databases/JODO_qm9_raw.db')
+filtered_db_path = '/root/MChem_DGMs/analysis/Databases/JODO_qm9_cleaned.db'
 
 def filter_disconnected(atoms):
     with StringIO() as fa:

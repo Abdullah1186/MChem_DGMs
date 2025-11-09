@@ -22,8 +22,8 @@ def rdkit_mol_to_ase_atoms(rdkit_mol: Chem.Mol) -> Atoms:
     return ase_atoms
 
 
-mol_list = pickle.load(open('/root/MChem_DGMs/models/DOJO/ancestral_ckpt_35_42.pkl', 'rb'))
-db = connect('/root/MChem_DGMs/analysis/Databases/JODO_drugs_raw.db')
+mol_list = pickle.load(open('/root/ancestral_ckpt_30_42.pkl', 'rb'))
+db = connect('/root/JODO_qm9_raw.db')
 
 with db:
     for mol in mol_list:

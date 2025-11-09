@@ -9,7 +9,7 @@ def home():
 
 @app.route('/analysis')
 def analysis():
-    return render_template('analysis.html')
+    return render_template('analysis.html') # going here so u can run analysis e.g return structural_analysis()
 
 
 if __name__ == "__main__":

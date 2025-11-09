@@ -3,7 +3,7 @@ from ase.db import connect
 from ase.io import read, write
 
 
-db = connect('/root/MChem_DGMs/analysis/Databases/JODO_drugs_cleaned.db')
+db = connect('/root/MChem_DGMs/analysis/Databases/JODO_qm9_raw.db')
 
 
 c=0
