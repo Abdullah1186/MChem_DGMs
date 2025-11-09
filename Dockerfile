@@ -21,9 +21,10 @@ COPY . .
 
 # Make a directory for your data
 RUN mkdir -p /MChem_DGMs/analysis/Databases \
-    && wget https://moleculardatabases.s3.eu-west-2.amazonaws.com/databases.tar.gz -O /tmp/databases.tar.gz \
+    && wget --no-check-certificate "https://drive.usercontent.google.com/download?id=17J7eKYIDHq-kcvxhZupIaXcV2co8juiO&export=download&confirm=t" -O /tmp/databases.tar.gz \
     && tar -xvzf /tmp/databases.tar.gz -C /MChem_DGMs/analysis/Databases \
     && rm /tmp/databases.tar.gz
+
 
 
 
