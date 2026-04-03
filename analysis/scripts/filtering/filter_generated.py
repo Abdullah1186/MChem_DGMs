@@ -6,7 +6,7 @@ import time
 import collections
 
 from scipy.spatial.distance import pdist
-from schnetpack import Properties 
+from schnetpack import Properties
 from utility_classes import Molecule, ConnectivityCompressor
 from utility_functions import update_dict
 from ase import Atoms
@@ -199,6 +199,10 @@ def check_valency(positions, numbers, valence, filter_by_valency=True,
                     mol = Molecule(pos[random_ord], num[random_ord])
                     con_mat = mol.get_connectivity()
                     nums = num[random_ord]
+            # Odd-electron filter: mark as invalid if sum of atomic numbers is odd
+            # if val and np.sum(num) % 2 != 0:
+            #     val = False
+            #     odd_electron_count += 1
             valid[i] = val
 
             if ((i + 1) % thresh == 0) and not print_file \
@@ -216,6 +220,7 @@ def check_valency(positions, numbers, valence, filter_by_valency=True,
             mol.get_mirror_can()
             mol.remove_unpicklable_attributes(restorable=False)
         mols += [mol]
+        
     return {'mols': mols, 'connectivity': connectivity, 'valid': valid}
 
 def remove_disconnected(connectivity_batch, valid=None):
@@ -337,8 +342,7 @@ if __name__ == '__main__':
             #print(len(res)))
 
             target_db = os.path.join(os.path.dirname(args.data_path),
-                                     f'{args.data_path}'.split('/')[-1].split('.')[0] +
-                                     '_filtered.db')
+                                     f'{os.path.splitext(os.path.basename(args.data_path))[0]}_filtered.db')
     else:
         print("here")
         print(f'\n\nFusing .mol_dict files in folder {args.data_path}...')
@@ -358,7 +362,7 @@ if __name__ == '__main__':
                 cur_res2 = pickle.load(f)
                 update_dict(res2, cur_res2)
 
-        target_db = os.path.join(args.data_path, 'generated_molecules.db')
+        target_db = os.path.join(args.data_path, 'generated_molecules_filtered.db')
     print("Done")
     # compute array with valence of provided atom types
     max_type = max(args.valence[::2])
@@ -420,8 +424,8 @@ if __name__ == '__main__':
             print(prog_str(work_str), flush=True)
 
         d = res[n_atoms]  # dictionary containing molecules of length n_atoms
-        all_pos = d[Properties .R]  # n_mols x n_atoms x 3 matrix with atom positions
-        all_numbers = d[Properties .Z]  # n_mols x n_atoms matrix with atom types
+        all_pos = d[Properties.R]  # n_mols x n_atoms x 3 matrix with atom positions
+        all_numbers = d[Properties.Z]  # n_mols x n_atoms matrix with atom types
         n_mols = len(all_pos)
         #if args.threads <= 0:
         results = check_valency(all_pos, all_numbers, valence,
@@ -429,11 +433,12 @@ if __name__ == '__main__':
                                     prog_str(work_str))
         connectivity = results['connectivity']
         mols = results['mols']
-        valid = np.ones(n_mols, dtype=int)  # all molecules are valid in the beginning
+        # valid = np.ones(n_mols, dtype=int)  # all molecules are valid in the beginning
+        valid = results['valid'].astype(int)  # use valid from check_valency
         # check valency of molecules with length n
         if 'valence' in args.filters:
             if not printed_todos:
-                print(' implement a procedure to check the valence in generated '
+                print('Please implement a procedure to check the valence in generated '
                       'molecules! Skipping valence check...')
             # TODO
             # Implement a procedure to assess the valence of generated molecules here!
@@ -448,46 +453,13 @@ if __name__ == '__main__':
             # analysis unless it is very important for your use case.
 
         # detect molecules with disconnected parts if desired
-        valid = remove_disconnected(connectivity, valid)['valid']
+        if 'disconnected' in args.filters:
+            valid = remove_disconnected(connectivity, valid)['valid']
+            
+            
         valid, duplicating, duplicate_count = \
                 filter_unique(mols, valid, use_bits=False)
-        #print(valid)
-        #time.sleep(100)
-            # TODO
-            # Implement a procedure to assess the connectedness of generated
-            # molecules here! You can for example use a connectivity matrix obtained
-            # from kekulized bond orders (as we do in our QM9 experiments) or
-            # calculate the connectivity with a simple cutoff (e.g. all atoms less
-            # then 2.0 angstrom apart are connected, see get_connectivity function in
-            # template_preprocess_dataset script).
-            # We will remove all molecules where two atoms are closer than 0.3
-            
 
-
-        # identify identical molecules (e.g. using fingerprints)
-        # TODO
-        # Implement procedure to identify duplicate structures here.
-        # This can (heuristically) be achieved in many ways but perfectly identifying
-        # all duplicate structures without false positives or false negatives is
-        # probably impossible (or computationally prohibitive).
-        # For our QM9 experiments, we compared fingerprints and canonical smiles
-        # strings of generated molecules using the Molecule class in utility_classes.py
-        # that provides functions to obtain these. It would also be possible to compare
-        # learned embeddings, e.g. from SchNet or G-SchNet, either as an average over
-        # all atoms, over all atoms of the same type, or combined with an algorithm
-        # to find the best match between atoms of two molecules considering the
-        # distances between embeddings. A similar procedure could be implemented
-        # using the root-mean-square deviation (RMSD) of atomic positions. Then it
-        # would be required to find the best match between atoms of two structures if
-        # they are rotated such that the RMSD given the match is minimal. Again,
-        # the best procedure really depends on the experimental setup, e.g. the
-        # goals of the experiment, used data and size of molecules in the dataset etc.
-
-        # duplicate_count contains the number of duplicates found for each structure
-        duplicate_count = np.zeros(n_mols, dtype=int)
-        # duplicating contains -1 for original structures and the id of the duplicated
-        # original structure for duplicates
-        duplicating = -np.ones(n_mols, dtype=int)
         # remove duplicate structures from list of valid molecules if desired
         if 'unique' in args.filters:
             valid[duplicating != -1] = 0
@@ -561,8 +533,8 @@ if __name__ == '__main__':
             new_stats[idx_id] = np.arange(len(new_stats[idx_id]))  # adjust ids
             shrunk_stats = np.hstack((shrunk_stats, new_stats))
             # shrink positions and atomic numbers
-            shrunk_res[key] = {Properties .R: d[Properties .R][idcs],
-                               Properties .Z: d[Properties .Z][idcs]}
+            shrunk_res[key] = {Properties.R: d[Properties.R][idcs],
+                               Properties.Z: d[Properties.Z][idcs]}
             i = end
 
         shrunk_res['stats'] = shrunk_stats
@@ -594,8 +566,8 @@ if __name__ == '__main__':
             if isinstance(n_atoms, str) or n_atoms == 0:
                 continue
             d = res[n_atoms]
-            all_pos = d[Properties .R]
-            all_numbers = d[Properties .Z]
+            all_pos = d[Properties.R]
+            all_numbers = d[Properties.Z]
             for pos, num in zip(all_pos, all_numbers):
                 at = Atoms(num, positions=pos)
                 conn.write(at)
@@ -604,16 +576,18 @@ if __name__ == '__main__':
     np.savez_compressed(os.path.splitext(target_db)[0] + f'_statistics.npz',
                         stats=res['stats'], stat_heads=res['stat_heads'])
     print(target_db)
-    geoms = ase.io.read(target_db,":")
-    print(len(geoms))
-    molecule_to_keep = []
-    for geom in geoms:
-        #os = geom.get_positions()
-        atypes = geom.get_atomic_numbers()
-        if(sum(atypes)%2 == 0):
-            molecule_to_keep.append(geom)
-        else:
-            pass
-    print(len(molecule_to_keep))
-    ase.io.write(target_db, molecule_to_keep)
     print("Done")
+    # Electron count filter (already applied in check_valency)
+    # geoms = ase.io.read(target_db,":")
+    # print(len(geoms))
+    # molecule_to_keep = []
+    # for geom in geoms:
+    #     #os = geom.get_positions()
+    #     atypes = geom.get_atomic_numbers()
+    #     if(sum(atypes)%2 == 0) and len(atypes) > 2:
+    #         molecule_to_keep.append(geom)
+    #     else:
+    #         pass
+    # print(len(molecule_to_keep))
+    # ase.io.write(target_db, molecule_to_keep)
+    # print("Done")
