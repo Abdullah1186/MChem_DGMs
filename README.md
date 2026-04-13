@@ -1,18 +1,21 @@
 # Comparison of Molecular Generation Models: GSchNet, EDM, GeoLDM and JODO 
 
+This is a repo of research done by Abdulla Al-Fekaiki in the Maurer Research group. Thesis can be found [here](https://www.linkedin.com/posts/abdulla-al-fekaiki-68a99a19b_mchem-thesis-ugcPost-7346622453256773633-bGXy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC70PEoBX3Bi0tKJgYtw8ucgaLgeSnkxQTY).
+
+
 ## Models 
 
-This repository contains three generative deep learning models for molecular generation:
+This repository contains analysis scripts for four generative deep learning models for molecular generation:
 
 - [**G-SchNet**](https://github.com/atomistic-machine-learning/schnetpack-gschnet.git)
 - [**EDM (E(n)-equivariant Diffusion Model)**](https://github.com/ehoogeboom/e3_diffusion_for_molecules.git)
 - [**GeoLDM (Geometric Latent Diffusion Model)**](https://github.com/MinkaiXu/GeoLDM.git)
 - [**JODO (Learning Joint 2D & 3D Diffusion Models for Complete Molecule Generation)**](https://github.com/GRAPH-0/JODO.git)
 
-### [Models](/models/) contains all the files of the trained models for each DGM that were trained in this project, not including pretrained models.
+<!-- ### [Models](/models/) contains all the files of the trained models for each DGM that were trained in this project, not including pretrained models.
 
 
-> **Some of these files are ziped e.g. Some optim.npy files due to their big size.** 
+> **Some of these files are ziped e.g. Some optim.npy files due to their big size.**  -->
 
 
 
@@ -70,7 +73,9 @@ Some of the analyses run on SMILES through a json file of smiles related to ever
 
 ### Filtering datasets
 
-[Filtering](analysis/scripts/filtering) contains scripts and tools for post-processing and filtering generated molecules. 
+
+
+The databases already contain filtered databases, but [Filtering](analysis/scripts/filtering) contains scripts and tools for post-processing and filtering generated molecules. 
 
 - [filter_disconnects.py](analysis/scripts/filtering/filter_disconnects.py) will filter the database by taking the largest fragment from a disconnected structure.
 
@@ -145,12 +150,7 @@ The GEOM-DRUGS repository explains how the database works, as it is not an ASE d
 
 
 
-## Disclaimers and Extra Notes
-
-- Many features of the code do not currently work, especially in the functional group script. Feel free to contribute fixes~!
-- Francesco Bartucca is the original creator of the elemental, structural, and functional group analysis code. I have only tweaked it for my own data and added some extra features.
-- The EDM model for DRUGS is located on the SULIS HPC, which is currently inaccessible. For information on generating molecules using EDM and the DRUGS dataset, see: [EDM Repo](https://github.com/atomistic-machine-learning/schnetpack-gschnet.git)
 
 
----
-Feel free to explore, modify, and extend the models and tools provided here for your own molecular generation research~! 💫🧪
+
+
